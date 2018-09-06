@@ -1,6 +1,6 @@
 # Site
 title:              An Nguyen
-bio:               'I am a PhD student in the [Cognitive Science department](http://cogsci.jhu.edu/) at Johns Hopkins University. I'm currently working with Geraldine Legendre on the topic of language acquisition.'
+bio:               'I am a PhD student in the [Cognitive Science department](http://cogsci.jhu.edu/){:target="_blank"} at Johns Hopkins University. I'm currently working with Geraldine Legendre on the topic of language acquisition.'
 description:        ""
 reading_time:       true
 words_per_minute:   200
