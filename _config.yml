@@ -2,7 +2,7 @@
 title:              An Nguyen
 bio:                ''
 description:        ""
-reading_time:       false
+reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/profile.jpg'
 background:         'assets/img/101.jpg'
