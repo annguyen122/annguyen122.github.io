@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Publicationsn
+title: Publications
 comments: false
 ---
 
