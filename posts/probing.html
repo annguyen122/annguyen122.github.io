@@ -26,11 +26,28 @@
     timing_response: -1,
     response_ends_trial: true
 };
+      
+      var repeat1 = {
+  timeline: [{
+    type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img src='image/1.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  }],
+  loop_function: function(data){
+    if(data.values[0].button_pressed == 1){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
     
       timeline.push(welcome);
-      timeline.push(slide1);
+      timeline.push(repeat1);
      jsPsych.init({
-      timeline: timeline
+      timeline: timeline,
+     fullscreen: true,
     });
   </script>
 </html>
