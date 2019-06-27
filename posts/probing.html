@@ -41,9 +41,94 @@
     }
   }
 }
+      
+      var repeat2 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/2.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
     
+       var repeat3 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/3.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+       
+        var repeat4 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/4.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+        
+         var repeat5 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/5.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+       
       timeline.push(welcome);
       timeline.push(repeat1);
+      timeline.push(repeat2);
+      timeline.push(repeat3);
+      timeline.push(repeat4);
+      timeline.push(repeat5);
+
      jsPsych.init({
       timeline: timeline,
      fullscreen: true,
