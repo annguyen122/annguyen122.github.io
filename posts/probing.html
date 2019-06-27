@@ -32,7 +32,7 @@
   timeline: [slide1],
   
   loop_function: function(){
-    data = jsPsych.data.getLastTrialData()
+    data = jsPsych.data.getLastTrialData().values()[0]
       console.log(data._button_pressed)
     if(data.button_pressed == "0"){
       return true; // loop again!
