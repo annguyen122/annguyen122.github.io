@@ -21,21 +21,15 @@
     
     
     var slide1 = {   
-        type: 'audio-keyboard-response',
-        stimulus: 'sound/q1.wav',
-        prompt: "<img src='image/1.jpg'> ",
-    choices: ['space'],
-    timing_response: -1,
-    response_ends_trial: true
-};
-      
-      var repeat1 = {
-  timeline: [{
-    type: 'audio-button-response',
+       type: 'audio-button-response',
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/1.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  }],
+  
+};
+      
+      var repeat1 = {
+  timeline: [slide1],
   
   loop_function: function(data){
     var data = jsPsych.timelineVariable('data');
@@ -48,10 +42,12 @@
 }
     
       timeline.push(welcome);
-      timeline.push(repeat1);
+      timeline.push(slide1);
      jsPsych.init({
       timeline: timeline,
      fullscreen: true,
+     on_finish: function() {
+        jsPsych.data.displayData();
     });
   </script>
 </html>
