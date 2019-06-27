@@ -16,10 +16,15 @@
    var timeline = [];
    var welcome = {
       type: "html-keyboard-response",
-      stimulus: "<p> Welcome to the experiment! <br> Today you are going to watch the adventure of Billy and Julie. Throughout the story, there will be occasional questions. Whenever you are done with a screen, press space to continue. <p>"
+      stimulus: "<p> Welcome to the experiment! <br> Today you are going to watch the adventure of Billy and Julie. Please make sure you are able to hear audio before proceeding. To move onto the next screen throughout the story, press space.<p>"
     };
     
-    
+   var welcome2 = {
+      type: "audio-keyboard-response",
+      stimulus:  'sound/q1.wav',
+      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions, either because he doesn't hear what the narrator says (his English is bad!) or because he misses some details on the screen. Please help Beeple answer his questions! <img class='center-fit' src='image/alien.jpg'> "
+    };
+      
     var slide1 = {   
        type: 'audio-button-response',
      stimulus: 'sound/q1.wav',
@@ -121,14 +126,202 @@
     }
   }
 }
-       
+         
+         var q1 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['In the kitchen', 'In the room with the plant'],
+  
+}
+        
+   var repeat6 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/6.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+   
+      var repeat7 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/7.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+      
+         var repeat8 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/8.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+         
+            var repeat9 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/9.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+            
+               var repeat10 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/10.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+     var repeat11 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/11.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}     
+     
+     
+        var repeat12 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/12.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+        
+           var repeat13 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/13.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+           
+             var q2 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q2.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['To the white building', 'To the hospital'],
+  
+}
+        
+               
       timeline.push(welcome);
       timeline.push(repeat1);
       timeline.push(repeat2);
       timeline.push(repeat3);
       timeline.push(repeat4);
       timeline.push(repeat5);
-
+      timeline.push(q1);
+      timeline.push(repeat6);
+      timeline.push(repeat7);
+      timeline.push(repeat8);
+      timeline.push(repeat9);
+      timeline.push(repeat10);
+      timeline.push(repeat11);
+      timeline.push(repeat12);
+      timeline.push(repeat13);
+      timeline.push(q2);
+      timeline.push(repeat14);
+      timeline.push(repeat15);
       function saveData(name, data){
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'savefile.php'); // 'write_data.php' is the path to the php file described above.
