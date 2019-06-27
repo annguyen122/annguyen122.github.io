@@ -34,7 +34,7 @@
   loop_function: function(data){
     data = jsPsych.data.getLastTrialData()
       console.log(data)
-    if(data.button_pressed == 0){
+    if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
       return false; // continue
