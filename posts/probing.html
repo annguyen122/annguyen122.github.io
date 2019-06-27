@@ -32,8 +32,9 @@
   timeline: [slide1],
   
   loop_function: function(data){
-    var data = jsPsych.timelineVariable('data');
-    if(data.values[0].button_pressed == 1){
+    data = jsPsych.data.getLastTrialData()
+      console.log(data)
+    if(data.button_pressed == 1){
       return true; // loop again!
     } else {
       return false; // continue
