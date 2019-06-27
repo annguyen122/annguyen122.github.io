@@ -36,7 +36,9 @@
       prompt: "<img class='center-fit' src='image/1.jpg'> ",
     choices: ['Play Again', 'Continue'],
   }],
+  
   loop_function: function(data){
+    var data = jsPsych.data.getLastTimelineData();
     if(data.values[0].button_pressed == 1){
       return true; // loop again!
     } else {
