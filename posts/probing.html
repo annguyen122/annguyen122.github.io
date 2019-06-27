@@ -34,7 +34,7 @@
   loop_function: function(data){
     data = jsPsych.data.getLastTrialData()
       console.log(data)
-    if(data.button_pressed == 1){
+    if(data.button_pressed == 0){
       return true; // loop again!
     } else {
       return false; // continue
@@ -43,7 +43,7 @@
 }
     
       timeline.push(welcome);
-      timeline.push(slide1);
+      timeline.push(repeat1);
      jsPsych.init({
       timeline: timeline,
      fullscreen: true,
