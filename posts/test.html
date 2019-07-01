@@ -89,50 +89,11 @@
   }
 }
        
-        var repeat4 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/4.wav',
-      prompt: "<img class='center-fit' src='image/4.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}
-        
-         var repeat5 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/5.wav',
-      prompt: "<img class='center-fit' src='image/5.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}
          
          var q1 = {
        type: 'html-button-response',
      stimulus: "<img class='center-fit' src='image/alien.jpg'> <audio src='sound/q1.wav'>",
-    choices: [['In the kitchen', 'In the room with the plant'],['test', 'test1']]
+    choices: {['In the kitchen', 'In the room with the plant'],['test', 'test1']}
   
 }
 
