@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Experiment</title>
+    <script src="jspsych.js"></script>
+    <script src="plugins/jspsych-html-button-response.js"></script>
+    <script src="plugins/jspsych-audio-keyboard-response.js"></script>
+    <script src="plugins/jspsych-audio-button-response.js"></script>
+
+
+    <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>  
+  </body>
+  <script>
+   var timeline = [];
+   var welcome = {
+      type: "html-button-response",
+      choices: ['Continue'],
+      stimulus: "<p> Welcome to the experiment! <br> Today you are going to watch the adventure of Billy and Julie. Please make sure you are able to hear audio before proceeding. To move onto the next screen throughout the story, click Continue.<p>"
+    };
+    
+   var welcome2 = {
+      type: "audio-button-response",
+      stimulus:  'sound/welcome.wav',
+      choices: ['Play Again', 'Continue'],
+      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions, either because he doesn't hear what the narrator says (his English is bad!) or because he misses some details on the screen. Please help Beeple answer his questions! <img class='center-fit' src='image/alien.jpg'> "
+    };
+      
+    var slide1 = {   
+       type: 'audio-button-response',
+     stimulus: 'sound/1.wav',
+      prompt: "<img class='center-fit' src='image/1.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+};
+      
+      var repeat1 = {
+  timeline: [slide1],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+      
+      var repeat2 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/2.wav',
+      prompt: "<img class='center-fit' src='image/2.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+    
+       var repeat3 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/3.wav',
+      prompt: "<img class='center-fit' src='image/3.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+       
+        var repeat4 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/4.wav',
+      prompt: "<img class='center-fit' src='image/4.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+        
+         var repeat5 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/5.wav',
+      prompt: "<img class='center-fit' src='image/5.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+         
+         var q1 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q1.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['In the kitchen', 'In the room with the plant'],
+  
+}
+
+   var q2 = {
+       type: 'html-button-response',
+     stimulus: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['In the kitchen', 'In the room with the plant'],
+  
+}
+
+jsPsych.init({
+      timeline: [q1,q2],
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
