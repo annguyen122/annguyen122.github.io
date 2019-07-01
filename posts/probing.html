@@ -1349,7 +1349,65 @@ var repeat57 = {
   }
 }  
          
-        
+  var repeat63 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/63.wav',
+      prompt: "<img class='center-fit' src='image/63.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}        
+  
+  var repeat64 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/64.wav',
+      prompt: "<img class='center-fit' src='image/64.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+  
+  var repeat65 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/65.wav',
+      prompt: "<img class='center-fit' src='image/65.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
                
       timeline.push(welcome);
       timeline.push(repeat1);
@@ -1369,6 +1427,66 @@ var repeat57 = {
       timeline.push(q2);
       timeline.push(repeat14);
       timeline.push(repeat15);
+      timeline.push(repeat16);
+      timeline.push(repeat17);
+      timeline.push(repeat18);
+      timeline.push(q3);
+      timeline.push(repeat19);
+      timeline.push(repeat20);
+      timeline.push(repeat21);
+      timeline.push(repeat22);
+      timeline.push(repeat23);
+       timeline.push(repeat24);
+       timeline.push(q4);
+       timeline.push(repeat25);
+     timeline.push(repeat26);
+      timeline.push(repeat27);
+       timeline.push(repeat28);
+      timeline.push(q5);
+      timeline.push(repeat29);
+      timeline.push(repeat30);
+      timeline.push(repeat31);
+      timeline.push(repeat32);
+      timeline.push(repeat33);
+      timeline.push(repeat34);
+      timeline.push(q6);
+      timeline.push(repeat35);
+      timeline.push(repeat36);
+      timeline.push(repeat37);
+      timeline.push(repeat38);
+      timeline.push(repeat39);
+      timeline.push(q7);
+      timeline.push(repeat40);
+      timeline.push(repeat41);
+      timeline.push(repeat42);
+      timeline.push(q8);
+      timeline.push(repeat43);
+      timeline.push(repeat44);
+      timeline.push(repeat45);
+      timeline.push(repeat46);
+      timeline.push(q9);
+      timeline.push(repeat47);
+      timeline.push(repeat48);
+      timeline.push(repeat49);
+      timeline.push(repeat50);
+      timeline.push(repeat51);
+      timeline.push(repeat52);
+      timeline.push(repeat53);
+      timeline.push(repeat54);
+      timeline.push(repeat55);
+      timeline.push(q10);
+      timeline.push(repeat56);
+      timeline.push(repeat57);
+      timeline.push(repeat58);
+      timeline.push(repeat59);
+      timeline.push(repeat60);
+      timeline.push(repeat61);
+      timeline.push(repeat62);
+      timeline.push(q11);
+      timeline.push(repeat63);
+      timeline.push(repeat64);
+      timeline.push(repeat65);
+      timeline.push(q12);
       function saveData(name, data){
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'savefile.php'); // 'write_data.php' is the path to the php file described above.
