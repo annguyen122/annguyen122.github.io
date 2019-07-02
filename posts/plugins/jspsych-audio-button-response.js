@@ -128,7 +128,10 @@ jsPsych.plugins["audio-button-response"] = (function() {
 
 		display_element.innerHTML = html;
         html.disabled = true;
-      audio.addEventListener('ended', html.removeAttribute("disabled"));
+      function enableBtn() {
+    document.getElementById("jspsych-audio-button-response-btngroup").disabled = false;
+} 
+      audio.addEventListener('ended', enableBtn());
 		for (var i = 0; i < trial.choices.length; i++) {
       display_element.querySelector('#jspsych-audio-button-response-button-' + i).addEventListener('click', function(e){
         var choice = e.currentTarget.getAttribute('data-choice'); // don't use dataset for jsdom compatibility
