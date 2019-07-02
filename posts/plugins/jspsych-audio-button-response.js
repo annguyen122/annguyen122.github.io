@@ -136,7 +136,6 @@ jsPsych.plugins["audio-button-response"] = (function() {
 		display_element.innerHTML = html;
       
      if(trial.enable){
-    document.getElementById("jspsych-audio-button-response-btngroup").disabled = true;
      audio.addEventListener('ended', function() {document.getElementById("jspsych-audio-button-response-btngroup").disabled = false;});
       }
      
