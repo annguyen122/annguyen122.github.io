@@ -127,9 +127,9 @@ jsPsych.plugins["audio-button-response"] = (function() {
 		}
 
 		display_element.innerHTML = html;
-        html.disabled = true;
+        html.setAttribute("disabled", "disabled");
       function enableBtn() {
-    html.disabled = false;
+   html.removeAttribute("disabled")
 } 
       audio.addEventListener('ended', enableBtn());
 		for (var i = 0; i < trial.choices.length; i++) {
