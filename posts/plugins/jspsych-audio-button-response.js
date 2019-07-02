@@ -136,9 +136,10 @@ jsPsych.plugins["audio-button-response"] = (function() {
 		display_element.innerHTML = html;
       
      if(trial.enable){
-     audio.addEventListener('ended', function() {document.getElementById("button").disabled = false;});
-     audio.addEventListener('ended', function() {document.querySelectorAll(".button").disabled = false;});   
-              audio.addEventListener('ended', function() {document.querySelectorAll("button").disabled = false;});     
+       var btns = document.querySelectorAll('.jspsych-audio-button-response-button button');
+      for(var i=0; i<btns.length; i++){
+      btns[i].setAttribute('disabled', 'disabled');
+     audio.addEventListener('ended', function() {btns[i].removeAttribute("disabled");});   
 
      }
      
