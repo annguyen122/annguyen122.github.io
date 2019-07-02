@@ -138,9 +138,11 @@ jsPsych.plugins["audio-button-response"] = (function() {
      if(trial.enable){
        var btns = document.querySelectorAll('.jspsych-audio-button-response-button button');
       for(var i=0; i<btns.length; i++){
-      btns[i].setAttribute('disabled', 'disabled');
-     audio.addEventListener('ended', function() {for(var i=0; i<btns.length; i++){
-      btns[i].removeAttribute("disabled");}); }  
+      btns[i].setAttribute('disabled', 'disabled');}
+     audio.addEventListener('ended', function() {
+         for(var i=0; i<btns.length; i++){
+            btns[i].removeAttribute("disabled");}
+     } );   
 
      }
      
