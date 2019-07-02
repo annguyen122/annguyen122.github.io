@@ -129,7 +129,7 @@ jsPsych.plugins["audio-button-response"] = (function() {
 		display_element.innerHTML = html;
         html.disabled = true;
       function enableBtn() {
-    document.getElementById("jspsych-audio-button-response-btngroup").disabled = false;
+    html.disabled = false;
 } 
       audio.addEventListener('ended', enableBtn());
 		for (var i = 0; i < trial.choices.length; i++) {
