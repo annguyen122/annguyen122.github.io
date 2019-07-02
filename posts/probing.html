@@ -136,6 +136,13 @@
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['In the kitchen', 'In the room with the plant'],
+  button_html: '<button class="jspsych-button">%choice%</button>',
+}
+         
+             var q1_1 = {
+       type: 'html-button-response',
+     stimulus: "Do you think Beeple asked the previous question because of his bad hearing, his bad eyesight, or something else?",
+    choices: ['Bad hearing', 'Bad eyesight', 'Something else'],
   
 }
    
@@ -144,7 +151,7 @@
      stimulus: 'sound/q3.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['An ice cream', 'A sweet treat'],
-  
+  button_html: '<button class="jspsych-button">%choice%</button>',
 }
                
                      var q4 = {
@@ -152,7 +159,7 @@
      stimulus: 'sound/q4.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A cake with fruit', 'A watermelon cake'],
-  
+  button_html: '<button class="jspsych-button">%choice%</button>',
 }
                      
                            var q5 = {
@@ -160,7 +167,7 @@
      stimulus: 'sound/q5.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Batman', 'The man wearing a mask'],
-  
+  button_html: '<button class="jspsych-button">%choice%</button>',
 }
                            
                                  var q6 = {
@@ -168,7 +175,7 @@
      stimulus: 'sound/q6.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Behind something big', 'Behind the rock'],
-  
+  button_html: '<button class="jspsych-button">%choice%</button>',
 }
                                  
                                        var q7 = {
@@ -176,7 +183,7 @@
      stimulus: 'sound/q7.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['With one of her parents', 'With her mom'],
-  
+  button_html: '<button class="jspsych-button">%choice%</button>',
 }
                                        
                                              var q8 = {
@@ -184,7 +191,7 @@
      stimulus: 'sound/q8.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The bounce house', 'The jumping game'],
-  
+  button_html: '<button class="jspsych-button">%choice%</button>',
 }
                                              
                                                    var q9 = {
@@ -192,19 +199,22 @@
      stimulus: 'sound/q9.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The person in blue', 'The doctor'],
+    button_html: '<button class="jspsych-button">%choice%</button>',                                                   
   
 }
                                                    
                                                          var q10 = {
        type: 'audio-button-response',
      stimulus: 'sound/q10.wav',
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+     button_html: '<button class="jspsych-button">%choice%</button>',
+   prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The firefighter', 'The man in the uniform'],
   
 }
                                                          
                                                                var q11 = {
        type: 'audio-button-response',
+     button_html: '<button class="jspsych-button">%choice%</button>',                                                           
      stimulus: 'sound/q11.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A store', '7-11'],
@@ -213,7 +223,8 @@
                                                                
                                                                      var q12 = {
        type: 'audio-button-response',
-     stimulus: 'sound/q12.wav',
+     button_html: '<button class="jspsych-button">%choice%</button>',
+                                                                         stimulus: 'sound/q12.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A bunny', 'A white pet'],
   
@@ -1410,83 +1421,15 @@ var repeat57 = {
 }  
                
       timeline.push(welcome);
+      timeline.push(welcome2);
       timeline.push(repeat1);
       timeline.push(repeat2);
       timeline.push(repeat3);
       timeline.push(repeat4);
       timeline.push(repeat5);
       timeline.push(q1);
-      timeline.push(repeat6);
-      timeline.push(repeat7);
-      timeline.push(repeat8);
-      timeline.push(repeat9);
-      timeline.push(repeat10);
-      timeline.push(repeat11);
-      timeline.push(repeat12);
-      timeline.push(repeat13);
-      timeline.push(q2);
-      timeline.push(repeat14);
-      timeline.push(repeat15);
-      timeline.push(repeat16);
-      timeline.push(repeat17);
-      timeline.push(repeat18);
-      timeline.push(q3);
-      timeline.push(repeat19);
-      timeline.push(repeat20);
-      timeline.push(repeat21);
-      timeline.push(repeat22);
-      timeline.push(repeat23);
-       timeline.push(repeat24);
-       timeline.push(q4);
-       timeline.push(repeat25);
-     timeline.push(repeat26);
-      timeline.push(repeat27);
-       timeline.push(repeat28);
-      timeline.push(q5);
-      timeline.push(repeat29);
-      timeline.push(repeat30);
-      timeline.push(repeat31);
-      timeline.push(repeat32);
-      timeline.push(repeat33);
-      timeline.push(repeat34);
-      timeline.push(q6);
-      timeline.push(repeat35);
-      timeline.push(repeat36);
-      timeline.push(repeat37);
-      timeline.push(repeat38);
-      timeline.push(repeat39);
-      timeline.push(q7);
-      timeline.push(repeat40);
-      timeline.push(repeat41);
-      timeline.push(repeat42);
-      timeline.push(q8);
-      timeline.push(repeat43);
-      timeline.push(repeat44);
-      timeline.push(repeat45);
-      timeline.push(repeat46);
-      timeline.push(q9);
-      timeline.push(repeat47);
-      timeline.push(repeat48);
-      timeline.push(repeat49);
-      timeline.push(repeat50);
-      timeline.push(repeat51);
-      timeline.push(repeat52);
-      timeline.push(repeat53);
-      timeline.push(repeat54);
-      timeline.push(repeat55);
-      timeline.push(q10);
-      timeline.push(repeat56);
-      timeline.push(repeat57);
-      timeline.push(repeat58);
-      timeline.push(repeat59);
-      timeline.push(repeat60);
-      timeline.push(repeat61);
-      timeline.push(repeat62);
-      timeline.push(q11);
-      timeline.push(repeat63);
-      timeline.push(repeat64);
-      timeline.push(repeat65);
-      timeline.push(q12);
+      timeline.push(q1_1);
+   
       function saveData(name, data){
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'savefile.php'); // 'write_data.php' is the path to the php file described above.
