@@ -73,6 +73,13 @@ jsPsych.plugins["audio-button-response"] = (function() {
         default: false,
         description: 'If true, then the trial will end as soon as the audio file finishes playing.'
       },
+
+            enable: {
+                type: jsPsych.plugins.parameterType.BOOL,
+        pretty_name: 'enable button after audio finishes playing',
+        default: false,
+        description: 'If true, then the button will be enabled.'
+      },
     }
   }
 
@@ -127,12 +134,16 @@ jsPsych.plugins["audio-button-response"] = (function() {
 		}
 
 		display_element.innerHTML = html;
+      
+     if(enable){
         document.getElementById("jspsych-audio-button-response-btngroup").disabled = true;
+
+     audio.addEventListener('ended', function() {
+    document.getElementById("jspsych-audio-button-response-btngroup").disabled = false;};
+      }
      
 
-      audio.onended = function() {
-    document.getElementById("jspsych-audio-button-response-btngroup").disabled = false;
-};
+      
 		for (var i = 0; i < trial.choices.length; i++) {
       display_element.querySelector('#jspsych-audio-button-response-button-' + i).addEventListener('click', function(e){
         var choice = e.currentTarget.getAttribute('data-choice'); // don't use dataset for jsdom compatibility
