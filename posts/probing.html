@@ -33,6 +33,8 @@
     var slide1 = {   
        type: 'audio-button-response',
      stimulus: 'sound/1.wav',
+        enable: true,
+
       prompt: "<img class='center-fit' src='image/1.jpg'> ",
     choices: ['Play Again', 'Continue'],
   
@@ -56,6 +58,8 @@
   timeline: [{   
        type: 'audio-button-response',
      stimulus: 'sound/2.wav',
+      enable: true,
+
       prompt: "<img class='center-fit' src='image/2.jpg'> ",
     choices: ['Play Again', 'Continue'],
   
@@ -63,7 +67,6 @@
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -76,6 +79,8 @@
   timeline: [{   
        type: 'audio-button-response',
      stimulus: 'sound/3.wav',
+      enable: true,
+
       prompt: "<img class='center-fit' src='image/3.jpg'> ",
     choices: ['Play Again', 'Continue'],
   
@@ -83,7 +88,6 @@
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -117,6 +121,8 @@ enable: true,
          var repeat5 = {
   timeline: [{   
        type: 'audio-button-response',
+      enable: true,
+
      stimulus: 'sound/5.wav',
       prompt: "<img class='center-fit' src='image/5.jpg'> ",
     choices: ['Play Again', 'Continue'],
@@ -125,7 +131,6 @@ enable: true,
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -136,7 +141,7 @@ enable: true,
          
          var q1 = {
        type: 'audio-button-response',
-  button_html: '<button class="jspsych-button" disabled >%choice%</button> ',
+  button_html: '<button id="button" class="jspsych-button" disabled >%choice%</button> ',
 enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
@@ -146,6 +151,7 @@ enable: true,
              var q1_1 = {
        type: 'html-button-response',
                    button_html: '<button class="jspsych-button">%choice%</button>',
+enable: true,
 
      stimulus: "Do you think Beeple asked the previous question because of his bad hearing, his bad eyesight, or something else?",
     choices: ['Bad hearing', 'Bad eyesight', 'Something else'],
@@ -155,6 +161,8 @@ enable: true,
                var q3 = {
        type: 'audio-button-response',
      stimulus: 'sound/q3.wav',
+                   enable: true,
+
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['An ice cream', 'A sweet treat'],
   button_html: '<button class="jspsych-button">%choice%</button>',
@@ -162,6 +170,8 @@ enable: true,
                
                      var q4 = {
        type: 'audio-button-response',
+                         enable: true,
+
      stimulus: 'sound/q4.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A cake with fruit', 'A watermelon cake'],
@@ -171,6 +181,7 @@ enable: true,
                            var q5 = {
        type: 'audio-button-response',
      stimulus: 'sound/q5.wav',
+    enable: true,                           
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Batman', 'The man wearing a mask'],
   button_html: '<button class="jspsych-button">%choice%</button>',
@@ -178,7 +189,8 @@ enable: true,
                            
                                  var q6 = {
        type: 'audio-button-response',
-     stimulus: 'sound/q6.wav',
+     enable: true,
+                                     stimulus: 'sound/q6.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Behind something big', 'Behind the rock'],
   button_html: '<button class="jspsych-button">%choice%</button>',
@@ -190,7 +202,7 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['With one of her parents', 'With her mom'],
   button_html: '<button class="jspsych-button">%choice%</button>',
-}
+enable: true,}
                                        
                                              var q8 = {
        type: 'audio-button-response',
@@ -198,7 +210,7 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The bounce house', 'The jumping game'],
   button_html: '<button class="jspsych-button">%choice%</button>',
-}
+enable: true,}
                                              
                                                    var q9 = {
        type: 'audio-button-response',
@@ -206,7 +218,7 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The person in blue', 'The doctor'],
     button_html: '<button class="jspsych-button">%choice%</button>',                                                   
-  
+  enable: true,
 }
                                                    
                                                          var q10 = {
@@ -215,7 +227,7 @@ enable: true,
      button_html: '<button class="jspsych-button">%choice%</button>',
    prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The firefighter', 'The man in the uniform'],
-  
+  enable: true,
 }
                                                          
                                                                var q11 = {
@@ -224,7 +236,7 @@ enable: true,
      stimulus: 'sound/q11.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A store', '7-11'],
-  
+  enable: true,
 }
                                                                
                                                                      var q12 = {
@@ -233,7 +245,7 @@ enable: true,
                                                                          stimulus: 'sound/q12.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A bunny', 'A white pet'],
-  
+  enable: true,
 }
    var repeat6 = {
   timeline: [{   
@@ -241,7 +253,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/6.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -261,7 +273,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/7.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -281,7 +293,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/8.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -301,7 +313,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/9.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -321,7 +333,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/10.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -340,7 +352,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/11.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -361,7 +373,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/12.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -381,7 +393,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/13.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -400,7 +412,7 @@ enable: true,
      stimulus: 'sound/q2.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['To the white building', 'To the hospital'],
-  
+  enable: true,
 }
              
                         var repeat14 = {
@@ -409,7 +421,7 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/14.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -430,7 +442,7 @@ enable: true,
      stimulus: 'sound/15.wav',
       prompt: "<img class='center-fit' src='image/15.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -450,7 +462,7 @@ enable: true,
      stimulus: 'sound/16.wav',
       prompt: "<img class='center-fit' src='image/16.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -470,7 +482,7 @@ enable: true,
      stimulus: 'sound/17.wav',
       prompt: "<img class='center-fit' src='image/17.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -490,7 +502,7 @@ enable: true,
      stimulus: 'sound/18.wav',
       prompt: "<img class='center-fit' src='image/18.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -510,7 +522,7 @@ enable: true,
      stimulus: 'sound/19.wav',
       prompt: "<img class='center-fit' src='image/19.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -530,7 +542,7 @@ enable: true,
      stimulus: 'sound/20.wav',
       prompt: "<img class='center-fit' src='image/20.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -550,7 +562,7 @@ enable: true,
      stimulus: 'sound/21.wav',
       prompt: "<img class='center-fit' src='image/21.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -570,7 +582,7 @@ enable: true,
      stimulus: 'sound/22.wav',
       prompt: "<img class='center-fit' src='image/22.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -590,7 +602,7 @@ enable: true,
      stimulus: 'sound/23.wav',
       prompt: "<img class='center-fit' src='image/23.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -610,7 +622,7 @@ enable: true,
      stimulus: 'sound/24.wav',
       prompt: "<img class='center-fit' src='image/24.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -630,7 +642,7 @@ enable: true,
      stimulus: 'sound/25.wav',
       prompt: "<img class='center-fit' src='image/25.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -649,7 +661,7 @@ enable: true,
      stimulus: 'sound/26.wav',
       prompt: "<img class='center-fit' src='image/26.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -668,7 +680,7 @@ enable: true,
      stimulus: 'sound/27.wav',
       prompt: "<img class='center-fit' src='image/27.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -687,7 +699,7 @@ enable: true,
      stimulus: 'sound/28.wav',
       prompt: "<img class='center-fit' src='image/28.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -706,7 +718,7 @@ enable: true,
      stimulus: 'sound/29.wav',
       prompt: "<img class='center-fit' src='image/29.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -725,7 +737,7 @@ enable: true,
      stimulus: 'sound/30.wav',
       prompt: "<img class='center-fit' src='image/30.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -744,7 +756,7 @@ enable: true,
      stimulus: 'sound/31.wav',
       prompt: "<img class='center-fit' src='image/31.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -763,7 +775,7 @@ enable: true,
      stimulus: 'sound/32.wav',
       prompt: "<img class='center-fit' src='image/32.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -782,7 +794,7 @@ enable: true,
      stimulus: 'sound/33.wav',
       prompt: "<img class='center-fit' src='image/33.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -801,7 +813,7 @@ enable: true,
      stimulus: 'sound/34.wav',
       prompt: "<img class='center-fit' src='image/34.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -820,7 +832,7 @@ enable: true,
      stimulus: 'sound/35.wav',
       prompt: "<img class='center-fit' src='image/35.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -839,7 +851,7 @@ enable: true,
      stimulus: 'sound/36.wav',
       prompt: "<img class='center-fit' src='image/36.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -858,7 +870,7 @@ enable: true,
      stimulus: 'sound/37.wav',
       prompt: "<img class='center-fit' src='image/37.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -877,7 +889,7 @@ enable: true,
      stimulus: 'sound/38.wav',
       prompt: "<img class='center-fit' src='image/38.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -896,7 +908,7 @@ enable: true,
      stimulus: 'sound/39.wav',
       prompt: "<img class='center-fit' src='image/39.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -915,7 +927,7 @@ enable: true,
      stimulus: 'sound/40.wav',
       prompt: "<img class='center-fit' src='image/40.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -935,7 +947,7 @@ enable: true,
      stimulus: 'sound/41.wav',
       prompt: "<img class='center-fit' src='image/41.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -954,7 +966,7 @@ enable: true,
      stimulus: 'sound/42.wav',
       prompt: "<img class='center-fit' src='image/42.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -974,7 +986,7 @@ enable: true,
      stimulus: 'sound/43.wav',
       prompt: "<img class='center-fit' src='image/43.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -993,7 +1005,7 @@ enable: true,
      stimulus: 'sound/44.wav',
       prompt: "<img class='center-fit' src='image/44.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1012,7 +1024,7 @@ enable: true,
      stimulus: 'sound/45.wav',
       prompt: "<img class='center-fit' src='image/45.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1032,7 +1044,7 @@ enable: true,
      stimulus: 'sound/46.wav',
       prompt: "<img class='center-fit' src='image/46.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1052,7 +1064,7 @@ enable: true,
      stimulus: 'sound/47.wav',
       prompt: "<img class='center-fit' src='image/47.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1071,7 +1083,7 @@ enable: true,
      stimulus: 'sound/48.wav',
       prompt: "<img class='center-fit' src='image/48.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1090,7 +1102,7 @@ enable: true,
      stimulus: 'sound/49.wav',
       prompt: "<img class='center-fit' src='image/49.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1110,7 +1122,7 @@ enable: true,
      stimulus: 'sound/50.wav',
       prompt: "<img class='center-fit' src='image/50.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1130,7 +1142,7 @@ var repeat51 = {
      stimulus: 'sound/51.wav',
       prompt: "<img class='center-fit' src='image/51.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1150,7 +1162,7 @@ var repeat52 = {
      stimulus: 'sound/52.wav',
       prompt: "<img class='center-fit' src='image/52.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1170,7 +1182,7 @@ var repeat53 = {
      stimulus: 'sound/53.wav',
       prompt: "<img class='center-fit' src='image/53.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1190,7 +1202,7 @@ var repeat54 = {
      stimulus: 'sound/54.wav',
       prompt: "<img class='center-fit' src='image/54.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1210,7 +1222,7 @@ var repeat55 = {
      stimulus: 'sound/55.wav',
       prompt: "<img class='center-fit' src='image/55.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1231,7 +1243,7 @@ var repeat56 = {
      stimulus: 'sound/56.wav',
       prompt: "<img class='center-fit' src='image/56.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1251,7 +1263,7 @@ var repeat57 = {
      stimulus: 'sound/57.wav',
       prompt: "<img class='center-fit' src='image/57.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1271,7 +1283,7 @@ var repeat57 = {
      stimulus: 'sound/58.wav',
       prompt: "<img class='center-fit' src='image/58.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1291,7 +1303,7 @@ var repeat57 = {
      stimulus: 'sound/59.wav',
       prompt: "<img class='center-fit' src='image/59.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1312,7 +1324,7 @@ var repeat57 = {
      stimulus: 'sound/60.wav',
       prompt: "<img class='center-fit' src='image/60.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1332,7 +1344,7 @@ var repeat57 = {
      stimulus: 'sound/61.wav',
       prompt: "<img class='center-fit' src='image/61.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1352,7 +1364,7 @@ var repeat57 = {
      stimulus: 'sound/62.wav',
       prompt: "<img class='center-fit' src='image/62.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1372,7 +1384,7 @@ var repeat57 = {
      stimulus: 'sound/63.wav',
       prompt: "<img class='center-fit' src='image/63.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1392,7 +1404,7 @@ var repeat57 = {
      stimulus: 'sound/64.wav',
       prompt: "<img class='center-fit' src='image/64.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
@@ -1412,7 +1424,7 @@ var repeat57 = {
      stimulus: 'sound/65.wav',
       prompt: "<img class='center-fit' src='image/65.jpg'> ",
     choices: ['Play Again', 'Continue'],
-  
+  enable: true,
 }],
   
   loop_function: function(){
