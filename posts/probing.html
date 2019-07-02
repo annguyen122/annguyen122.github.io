@@ -18,14 +18,15 @@
       type: "html-button-response",
       choices: ['Continue'],
 
-      stimulus: "<p> Welcome to the experiment! <br> Today you are going to watch the adventure of Billy and Julie. Please make sure you are able to hear audio before proceeding. To move onto the next screen throughout the story, click Continue.<p>"
+      stimulus: "<p> Welcome to the experiment! <br> Today you are going to watch the adventure of Billy and Julie. <br> To move onto the next screen throughout the story, click Continue.<p>"
     };
     
    var welcome2 = {
       type: "html-button-response",
       choices: ['Continue'],
+    stimulus: '',
 
-      stimulus: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions, either because he doesn't hear what the narrator says (his English is bad!) or because he misses some details on the screen. Please help Beeple answer his questions! Make sure your volume is on before clicking Continue! <img class='center-fit' src='image/alien.jpg'> "
+      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions, either because he doesn't hear what the narrator says (his English is bad!) or because he misses some details on the screen. Please help Beeple answer his questions! Make sure your volume is on before clicking Continue! <img class='center-fit' src='image/alien.jpg'> "
     };
       
     var slide1 = {   
@@ -132,6 +133,7 @@
          
          var q1 = {
        type: 'audio-button-response',
+  button_html: '<button class="jspsych-button">%choice%</button>',
 
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
@@ -140,6 +142,8 @@
          
              var q1_1 = {
        type: 'html-button-response',
+                   button_html: '<button class="jspsych-button">%choice%</button>',
+
      stimulus: "Do you think Beeple asked the previous question because of his bad hearing, his bad eyesight, or something else?",
     choices: ['Bad hearing', 'Bad eyesight', 'Something else'],
   
