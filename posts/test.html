@@ -4,7 +4,7 @@
     <title>Experiment</title>
     <script src="jspsych.js"></script>
     <script src="plugins/jspsych-html-button-response.js"></script>
-    <script src="plugins/jspsych-audio-keyboard-response.js"></script>
+    <script src="plugins/jspsych-image-button-response.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
 
 
@@ -69,32 +69,13 @@
   }
 }
     
-       var repeat3 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/3.wav',
-      prompt: "<img class='center-fit' src='image/3.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}
-       
+        
          
        var repeat17 = {
   timeline: [{   
        type: 'image-button-response',
      stimulus: 'image/17.jpg',
-      prompt: ''
+      prompt: '',
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
