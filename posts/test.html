@@ -30,7 +30,7 @@
     var slide1 = {   
        type: 'audio-button-response',
      stimulus: 'sound/1.wav',
-      prompt: "<img class='center-fit' src='image/1.jpg'> ",
+      prompt: "<img class='center-fit' src='image/2.gif'> ",
     choices: ['Play Again', 'Continue'],
   
 };
@@ -112,7 +112,7 @@
 
 
 jsPsych.init({
-      timeline: [q3],
+      timeline: [slide1],
       on_finish: function() {
         jsPsych.data.displayData();
       }
