@@ -6,6 +6,7 @@
     <script src="plugins/jspsych-html-button-response.js"></script>
     <script src="plugins/jspsych-audio-keyboard-response.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="plugins/jspsych-image-button-response.js"></script>
 
 
     <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
@@ -27,7 +28,7 @@
       choices: ['Continue'],
     stimulus: '',
 
-      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions, either because he doesn't hear what the narrator says (his English is bad!) or because he misses some details on the screen. Please help Beeple answer his questions! Make sure your volume is on before clicking Continue! <br><br> <img class='center-fit' src='image/alien.jpg'> "
+      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions. Sometimes it's because he doesn't hear what the narrator says (his English is bad!). Sometimes it's because he misses some details on the screen. And sometimes, it's because he wants to test you to make sure you're paying attention! Please help Beeple answer his questions! <br> Make sure your volume is on before clicking Continue! <br><br> <img class='center-fit' src='image/alien.jpg'> "
     };
       
     var slide1 = {   
@@ -60,7 +61,7 @@
      stimulus: 'sound/2.wav',
       enable: true,
 
-      prompt: "<img class='center-fit' src='image/2.jpg'> ",
+      prompt: "<img class='center-fit' src='image/2.gif'> ",
     choices: ['Play Again', 'Continue'],
   
 }],
@@ -157,6 +158,10 @@ enable: true,
     choices: ['Bad hearing', 'Bad eyesight', 'Something else'],
   
 }
+             
+              
+               
+               
    
                var q3 = {
        type: 'audio-button-response',
@@ -415,31 +420,12 @@ enable: true,}
   enable: true,
 }
              
-                        var repeat14 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/q1.wav',
-      prompt: "<img class='center-fit' src='image/14.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  enable: true,
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}
-         
+                              
              
                         var repeat15 = {
   timeline: [{   
        type: 'audio-button-response',
-     stimulus: 'sound/15.wav',
+     stimulus: 'sound/14.wav',
       prompt: "<img class='center-fit' src='image/15.jpg'> ",
     choices: ['Play Again', 'Continue'],
   enable: true,
@@ -478,9 +464,8 @@ enable: true,}
                          
                           var repeat17 = {
   timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/17.wav',
-      prompt: "<img class='center-fit' src='image/17.jpg'> ",
+       type: 'image-button-response',
+     stimulus: 'image/17.jpg',
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -598,9 +583,8 @@ enable: true,}
                                
                                 var repeat23 = {
   timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/23.wav',
-      prompt: "<img class='center-fit' src='image/23.jpg'> ",
+       type: 'image-button-response',
+     stimulus: 'image/23.jpg',
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -659,7 +643,7 @@ enable: true,}
   timeline: [{   
        type: 'audio-button-response',
      stimulus: 'sound/26.wav',
-      prompt: "<img class='center-fit' src='image/26.jpg'> ",
+      prompt: "<img class='center-fit' src='image/26.gif'> ",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -676,9 +660,8 @@ enable: true,}
 }
     var repeat27 = {
   timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/27.wav',
-      prompt: "<img class='center-fit' src='image/27.jpg'> ",
+       type: 'image-button-response',
+     stimulus: 'image/27.jpg',
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -754,7 +737,7 @@ enable: true,}
   timeline: [{   
        type: 'audio-button-response',
      stimulus: 'sound/31.wav',
-      prompt: "<img class='center-fit' src='image/31.jpg'> ",
+      prompt: "<img class='center-fit' src='image/31.gif'> ",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -769,44 +752,7 @@ enable: true,}
     }
   }
 }       
-  var repeat32 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/32.wav',
-      prompt: "<img class='center-fit' src='image/32.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  enable: true,
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}       
-  var repeat33 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/33.wav',
-      prompt: "<img class='center-fit' src='image/33.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  enable: true,
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}     
+ 
   var repeat34 = {
   timeline: [{   
        type: 'audio-button-response',
@@ -887,7 +833,7 @@ enable: true,}
   timeline: [{   
        type: 'audio-button-response',
      stimulus: 'sound/38.wav',
-      prompt: "<img class='center-fit' src='image/38.jpg'> ",
+      prompt: "<img class='center-fit' src='image/38.gif'> ",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -1100,7 +1046,7 @@ enable: true,}
   timeline: [{   
        type: 'audio-button-response',
      stimulus: 'sound/49.wav',
-      prompt: "<img class='center-fit' src='image/49.jpg'> ",
+      prompt: "<img class='center-fit' src='image/49.gif'> ",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -1382,7 +1328,7 @@ var repeat57 = {
   timeline: [{   
        type: 'audio-button-response',
      stimulus: 'sound/63.wav',
-      prompt: "<img class='center-fit' src='image/63.jpg'> ",
+      prompt: "<img class='center-fit' src='image/63.gif'> ",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
@@ -1447,7 +1393,77 @@ var repeat57 = {
       timeline.push(repeat5);
       timeline.push(q1);
       timeline.push(q1_1);
-   
+      timeline.push(repeat6);
+      timeline.push(repeat7);
+      timeline.push(repeat8);
+      timeline.push(repeat9);
+      timeline.push(repeat10);
+      timeline.push(repeat11);
+      timeline.push(repeat12);
+      timeline.push(repeat13);
+      timeline.push(q2);
+      timeline.push(repeat14);
+      timeline.push(repeat15);
+      timeline.push(repeat16);
+      timeline.push(repeat17);
+      timeline.push(repeat18);
+      timeline.push(q3);
+      timeline.push(repeat19);
+      timeline.push(repeat20);
+      timeline.push(repeat21);
+      timeline.push(repeat22);
+      timeline.push(repeat23);
+       timeline.push(repeat24);
+       timeline.push(q4);
+        timeline.push(q1_1);
+
+       timeline.push(repeat25);
+     timeline.push(repeat26);
+      timeline.push(repeat27);
+       timeline.push(repeat28);
+      timeline.push(q5);
+      timeline.push(repeat29);
+      timeline.push(repeat30);
+      timeline.push(repeat31);
+      timeline.push(repeat34);
+      timeline.push(q6);
+      timeline.push(repeat35);
+      timeline.push(repeat36);
+      timeline.push(repeat37);
+      timeline.push(repeat38);
+      timeline.push(repeat39);
+      timeline.push(q7);
+      timeline.push(repeat40);
+      timeline.push(repeat41);
+      timeline.push(repeat42);
+      timeline.push(q8);
+      timeline.push(q1_1);
+
+      timeline.push(repeat43);
+      timeline.push(repeat44);
+      timeline.push(repeat45);
+      timeline.push(repeat46);
+      timeline.push(q9);
+      timeline.push(repeat47);
+      timeline.push(repeat48);
+      timeline.push(repeat49);
+      timeline.push(repeat53);
+      timeline.push(repeat54);
+      timeline.push(repeat55);
+      timeline.push(q10);
+      timeline.push(repeat56);
+      timeline.push(repeat57);
+      timeline.push(repeat58);
+      timeline.push(repeat59);
+      timeline.push(repeat60);
+      timeline.push(repeat61);
+      timeline.push(repeat62);
+      timeline.push(q11);
+      timeline.push(repeat63);
+      timeline.push(repeat64);
+      timeline.push(repeat65);
+      timeline.push(q12);
+
       function saveData(name, data){
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'savefile.php'); // 'write_data.php' is the path to the php file described above.
