@@ -14,6 +14,9 @@
   <body>  
   </body>
   <script>
+      
+    id=  Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+      console.log(id)
    var timeline = [];
    var welcome = {
       type: "html-button-response",
@@ -28,7 +31,7 @@
       choices: ['Continue'],
     stimulus: '',
 
-      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions.<br> Sometimes it's because <b>he doesn't hear what the narrator says </b> (his English is bad!).<br> Sometimes it's because<b>he misses some details on the screen</b>. <br>And sometimes, it's because <b>he wants to test you to make sure you're paying attention</b>!<br> Please help Beeple answer his questions! Make sure your volume is on before clicking Continue! <br><br> <img class='center-fit' src='image/alien.jpg'> "
+      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions.<br> Sometimes it's because <b>he doesn't hear what the narrator says </b> (his English is bad!).<br> Sometimes it's because <b>he misses some details on the screen</b>. <br>And sometimes, it's because <b>he wants to test you to make sure you're paying attention</b>!<br> Please help Beeple answer his questions! Make sure your volume is on before clicking Continue! <br><br> <img class='center-fit' src='image/alien.jpg'> "
     };
       
     var slide1 = {   
@@ -46,7 +49,7 @@
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -110,7 +113,7 @@ enable: true,
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -186,7 +189,8 @@ enable: true,
                            var q5 = {
        type: 'audio-button-response',
      stimulus: 'sound/q5.wav',
-    enable: true,                           
+    enable: true,
+
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Batman', 'The man wearing a mask'],
   button_html: '<button class="jspsych-button">%choice%</button>',
@@ -221,7 +225,7 @@ enable: true,}
        type: 'audio-button-response',
      stimulus: 'sound/q9.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['The person in blue', 'The doctor'],
+    choices: ['The person wearing blue', 'The doctor'],
     button_html: '<button class="jspsych-button">%choice%</button>',                                                   
   enable: true,
 }
@@ -263,7 +267,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -283,7 +287,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -303,7 +307,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -323,7 +327,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -343,7 +347,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -362,7 +366,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -383,7 +387,6 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -403,7 +406,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -415,6 +418,8 @@ enable: true,}
              var q2 = {
        type: 'audio-button-response',
      stimulus: 'sound/q2.wav',
+                   button_html: '<button class="jspsych-button">%choice%</button>',
+
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['To the white building', 'To the hospital'],
   enable: true,
@@ -433,7 +438,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -453,7 +458,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -464,15 +469,16 @@ enable: true,}
                          
                           var repeat17 = {
   timeline: [{   
-       type: 'image-button-response',
-     stimulus: 'image/17.jpg',
+       type: 'html-button-response',
+     stimulus: '',
+     prompt: "<img class='center-fit' src='image/17.jpg'>",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -492,7 +498,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -512,7 +518,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -532,7 +538,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -552,7 +558,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -572,7 +578,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -583,15 +589,16 @@ enable: true,}
                                
                                 var repeat23 = {
   timeline: [{   
-       type: 'image-button-response',
-     stimulus: 'image/23.jpg',
+       type: 'html-button-response',
+     stimulus: '',
+      prompt: "<img class='center-fit' src='image/23.jpg'>",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -611,7 +618,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -631,7 +638,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -650,7 +657,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -660,15 +667,16 @@ enable: true,}
 }
     var repeat27 = {
   timeline: [{   
-       type: 'image-button-response',
-     stimulus: 'image/27.jpg',
+       type: 'html-button-response',
+     stimulus: '',
+      prompt: "<img class='center-fit' src='image/27.jpg'>",
     choices: ['Play Again', 'Continue'],
   enable: true,
 }],
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -687,7 +695,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -706,7 +714,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -725,7 +733,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -744,7 +752,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -764,7 +772,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -783,7 +791,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -802,7 +810,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -821,7 +829,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -840,7 +848,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -859,7 +867,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -878,7 +886,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -898,7 +906,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -917,7 +925,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -937,7 +945,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -956,7 +964,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -975,7 +983,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -995,7 +1003,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1015,7 +1023,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1034,7 +1042,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1053,7 +1061,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1073,7 +1081,7 @@ enable: true,}
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1093,7 +1101,7 @@ var repeat51 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1113,7 +1121,7 @@ var repeat52 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1133,7 +1141,7 @@ var repeat53 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1153,7 +1161,7 @@ var repeat54 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1173,7 +1181,7 @@ var repeat55 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1194,7 +1202,7 @@ var repeat56 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1214,7 +1222,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1234,7 +1242,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1254,7 +1262,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1275,7 +1283,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1295,7 +1303,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1315,7 +1323,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1335,7 +1343,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1355,7 +1363,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1375,7 +1383,7 @@ var repeat57 = {
   
   loop_function: function(){
     data = jsPsych.data.getLastTrialData().values()[0]
-      console.log(data._button_pressed)
+
     if(data.button_pressed == "0"){
       return true; // loop again!
     } else {
@@ -1469,13 +1477,19 @@ var repeat57 = {
   xhr.send(JSON.stringify({filename: name, filedata: data}));
 }
 
+  String.prototype.format = function () {
+    var i = 0, args = arguments;
+    return this.replace(/{}/g, function () {
+        return typeof args[i] != 'undefined' ? args[i++] : '';
+    });
+    };
       
-     jsPsych.init({
+      jsPsych.init({
       timeline: timeline,
          use_webaudio: false,
      fullscreen: true,
       on_finish: function(){ saveData("experiment_data", jsPsych.data.get().csv()); 
-                           jsPsych.data.get().localSave('csv','mydata.csv');}
+                           jsPsych.data.get().localSave('csv','{}.csv'.format(id));}
     });
   </script>
 </html>
