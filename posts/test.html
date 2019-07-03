@@ -90,13 +90,26 @@
 }
        
          
-         var q1 = {
-       type: 'html-button-response',
-       button_html: '<button class="jspsych-button">%choice%</button>',
-     stimulus: "<img class='center-fit' src='image/alien.jpg'> <audio src='sound/q1.wav'>",
-    choices: ['In the kitchen', 'In the room with the plant']
+       var repeat17 = {
+  timeline: [{   
+       type: 'image-button-response',
+     stimulus: 'image/17.jpg',
+      prompt: ''
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
   
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+      console.log(data._button_pressed)
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
 }
+  
 
    var q2 = {
        type: 'html-button-response',
@@ -112,7 +125,7 @@
 
 
 jsPsych.init({
-      timeline: [slide1],
+      timeline: [repeat17],
       on_finish: function() {
         jsPsych.data.displayData();
       }
