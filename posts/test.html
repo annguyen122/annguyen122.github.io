@@ -100,11 +100,20 @@
 }
    
 
-
-jsPsych.init({
-      timeline: [repeat17],
-      on_finish: function() {
-        jsPsych.data.displayData();
-      }
+    id=  Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+String.prototype.format = function () {
+    var i = 0, args = arguments;
+    return this.replace(/{}/g, function () {
+        return typeof args[i] != 'undefined' ? args[i++] : '';
     });
-</script>
+    };
+      
+      jsPsych.init({
+      timeline: timeline,
+         use_webaudio: false,
+     fullscreen: true,
+      on_finish: function(){ saveData("experiment_data", jsPsych.data.get().csv()); 
+                           jsPsych.data.get().localSave('csv','{}.csv'.format(id));}
+    });
+  </script>
+</html>
