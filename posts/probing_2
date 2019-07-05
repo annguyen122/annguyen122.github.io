@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Experiment</title>
+    <script src="jspsych.js"></script>
+    <script src="plugins/jspsych-html-button-response.js"></script>
+    <script src="plugins/jspsych-audio-keyboard-response.js"></script>
+    <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="plugins/jspsych-image-button-response.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+
+
+    <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>  
+  </body>
+  <script>
+      
+      
+      function randomString() {
+	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+	var string_length = 6;
+	var randomstring = '';
+	for (var i=0; i<string_length; i++) {
+		var rnum = Math.floor(Math.random() * chars.length);
+		randomstring += chars.substring(rnum,rnum+1);
+	}
+	return randomstring;
+}
+      
+    id=  randomString();
+      id2 =     Math.random().toString(36).substr(6);
+      console.log(id)
+      console.log(id2)
+   var timeline = [];
+   var welcome = {
+      type: "html-button-response",
+      choices: ['Continue'],
+      stimulus: '',
+       prompt: "<p> Welcome to the experiment! Today you are going to listen to the adventure of Billy and Julie. <br> To move onto the next screen throughout the story, click Continue.<p>"
+    };
+    
+   var welcome2 = {
+      type: "html-button-response",
+      choices: ['Continue'],
+    stimulus: '',
+      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions.<br> Sometimes it's because <b>he doesn't hear what the narrator says </b> (his English is bad!).<br> Sometimes it's because <b>he misses some details on the screen</b>. <br>And sometimes, it's because <b>he wants to test you to make sure you're paying attention</b>!<br> Please help Beeple answer his questions! Make sure your volume is on before clicking Continue! <br><br> <img class='center-fit' src='image/alien.jpg'> "
+    };
+      
+    var slide1 = {   
+       type: 'audio-button-response',
+     stimulus: 'sound/1.wav',
+        enable: true,
+      prompt: "<img class='center-fit' src='image/1.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+};
+      
+      var repeat1 = {
+  timeline: [slide1],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+      
+      var repeat2 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/2.wav',
+      enable: true,
+      prompt: "<img class='center-fit' src='image/2.gif'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+    
+       var repeat3 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/3.wav',
+      enable: true,
+      prompt: "<img class='center-fit' src='image/3.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+       
+        var repeat4 = {
+  timeline: [{   
+       type: 'audio-button-response',
+        button_html: '<button class="jspsych-btn">%choice%</button> ',
+enable: true,
+     stimulus: 'sound/4.wav',
+      prompt: "<img class='center-fit' src='image/4.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+        
+         var repeat5 = {
+  timeline: [{   
+       type: 'audio-button-response',
+      enable: true,
+     stimulus: 'sound/5.wav',
+      prompt: "<img class='center-fit' src='image/5.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+         
+         var q1 = {
+       type: 'survey-text',
+        questions: [{prompt: "<audio src ='sound/q1.wav' autoplay> <img src = 'image/alien.jpg'>"}],
+}
+         
+             var q1_1 = {
+       type: 'html-button-response',
+                   button_html: '<button class="jspsych-button">%choice%</button>',
+enable: true,
+     stimulus: "Do you think Beeple asked the previous question because of his bad hearing, his bad eyesight, or something else?",
+    choices: ['Bad hearing', 'Bad eyesight', 'Something else'],
+  
+}
+             
+              
+               
+               
+   
+               var q3 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q3.wav',
+                   enable: true,
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['An ice cream', 'A sweet treat'],
+  button_html: '<button class="jspsych-button">%choice%</button>',
+}
+               
+                     var q4 = {
+       type: 'audio-button-response',
+                         enable: true,
+     stimulus: 'sound/q4.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['A cake with fruit', 'A watermelon cake'],
+  button_html: '<button class="jspsych-button">%choice%</button>',
+}
+                     
+                           var q5 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q5.wav',
+    enable: true,
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['Batman', 'The man wearing a mask'],
+  button_html: '<button class="jspsych-button">%choice%</button>',
+}
+                           
+                                 var q6 = {
+       type: 'audio-button-response',
+     enable: true,
+                                     stimulus: 'sound/q6.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['Behind something big', 'Behind the rock'],
+  button_html: '<button class="jspsych-button">%choice%</button>',
+}
+                                 
+                                       var q7 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q7.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['With one of her parents', 'With her mom'],
+  button_html: '<button class="jspsych-button">%choice%</button>',
+enable: true,}
+                                       
+                                             var q8 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q8.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['The bounce house', 'The jumping game'],
+  button_html: '<button class="jspsych-button">%choice%</button>',
+enable: true,}
+                                             
+                                                   var q9 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q9.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['The person wearing blue', 'The doctor'],
+    button_html: '<button class="jspsych-button">%choice%</button>',                                                   
+  enable: true,
+}
+                                                   
+                                                         var q10 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q10.wav',
+     button_html: '<button class="jspsych-button">%choice%</button>',
+   prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['The firefighter', 'The man in the uniform'],
+  enable: true,
+}
+                                                         
+                                                               var q11 = {
+       type: 'audio-button-response',
+     button_html: '<button class="jspsych-button">%choice%</button>',                                                           
+     stimulus: 'sound/q11.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['A store', '7-11'],
+  enable: true,
+}
+                                                               
+                                                                     var q12 = {
+       type: 'audio-button-response',
+     button_html: '<button class="jspsych-button">%choice%</button>',
+                                                                         stimulus: 'sound/q12.wav',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['A bunny', 'A white pet'],
+  enable: true,
+}
+   var repeat6 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/6.wav',
+      prompt: "<img class='center-fit' src='image/6.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+   
+      var repeat7 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/7.wav',
+      prompt: "<img class='center-fit' src='image/7.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+      
+         var repeat8 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/8.wav',
+      prompt: "<img class='center-fit' src='image/8.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+         
+            var repeat9 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/9.wav',
+      prompt: "<img class='center-fit' src='image/9.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+            
+               var repeat10 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/10.wav',
+      prompt: "<img class='center-fit' src='image/10.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+     var repeat11 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/11.wav',
+      prompt: "<img class='center-fit' src='image/11.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}     
+     
+     
+        var repeat12 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/12.wav',
+      prompt: "<img class='center-fit' src='image/12.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+        
+           var repeat13 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/13.wav',
+      prompt: "<img class='center-fit' src='image/13.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+           
+             var q2 = {
+       type: 'audio-button-response',
+     stimulus: 'sound/q2.wav',
+                   button_html: '<button class="jspsych-button">%choice%</button>',
+      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
+    choices: ['To the white building', 'To the hospital'],
+  enable: true,
+}
+             
+                              
+             
+                        var repeat15 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/14.wav',
+      prompt: "<img class='center-fit' src='image/15.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+                        
+                         var repeat16 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/16.wav',
+      prompt: "<img class='center-fit' src='image/16.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+                         
+                          var repeat17 = {
+  timeline: [{   
+       type: 'html-button-response',
+     stimulus: '',
+     prompt: "<img class='center-fit' src='image/17.jpg'>",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+                          
+                           var repeat18 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/18.wav',
+      prompt: "<img class='center-fit' src='image/18.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+         
+                            var repeat19 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/19.wav',
+      prompt: "<img class='center-fit' src='image/19.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+ 
+                             var repeat20 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/20.wav',
+      prompt: "<img class='center-fit' src='image/20.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+                             
+                              var repeat21 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/21.wav',
+      prompt: "<img class='center-fit' src='image/21.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+                              
+                               var repeat22 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/22.wav',
+      prompt: "<img class='center-fit' src='image/22.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+                               
+                                var repeat23 = {
+  timeline: [{   
+       type: 'html-button-response',
+     stimulus: '',
+      prompt: "<img class='center-fit' src='image/23.jpg'>",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+        
+                                                          var repeat24 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/24.wav',
+      prompt: "<img class='center-fit' src='image/24.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+                                                          
+  var repeat25 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/25.wav',
+      prompt: "<img class='center-fit' src='image/25.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+   var repeat26 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/26.wav',
+      prompt: "<img class='center-fit' src='image/26.gif'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+    var repeat27 = {
+  timeline: [{   
+       type: 'html-button-response',
+     stimulus: '',
+      prompt: "<img class='center-fit' src='image/27.jpg'>",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+     var repeat28 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/28.wav',
+      prompt: "<img class='center-fit' src='image/28.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+      var repeat29 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/29.wav',
+      prompt: "<img class='center-fit' src='image/29.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+       var repeat30 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/30.wav',
+      prompt: "<img class='center-fit' src='image/30.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+  var repeat31 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/31.wav',
+      prompt: "<img class='center-fit' src='image/31.gif'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+ 
+  var repeat34 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/34.wav',
+      prompt: "<img class='center-fit' src='image/34.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+  var repeat35 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/35.wav',
+      prompt: "<img class='center-fit' src='image/35.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+  var repeat36 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/36.wav',
+      prompt: "<img class='center-fit' src='image/36.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+  var repeat37 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/37.wav',
+      prompt: "<img class='center-fit' src='image/37.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}      
+  var repeat38 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/38.wav',
+      prompt: "<img class='center-fit' src='image/38.gif'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}     
+  var repeat39 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/39.wav',
+      prompt: "<img class='center-fit' src='image/39.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}    
+  var repeat40 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/40.wav',
+      prompt: "<img class='center-fit' src='image/40.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+         
+   var repeat41 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/41.wav',
+      prompt: "<img class='center-fit' src='image/41.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+     var repeat42 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/42.wav',
+      prompt: "<img class='center-fit' src='image/42.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+         
+       var repeat43 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/43.wav',
+      prompt: "<img class='center-fit' src='image/43.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+         var repeat44 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/44.wav',
+      prompt: "<img class='center-fit' src='image/44.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+           var repeat45 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/45.wav',
+      prompt: "<img class='center-fit' src='image/45.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+             var repeat46 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/46.wav',
+      prompt: "<img class='center-fit' src='image/46.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+             
+               var repeat47 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/47.wav',
+      prompt: "<img class='center-fit' src='image/47.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+     var repeat48 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/48.wav',
+      prompt: "<img class='center-fit' src='image/48.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+  var repeat49 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/49.wav',
+      prompt: "<img class='center-fit' src='image/49.gif'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}       
+                        
+ var repeat50 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/50.wav',
+      prompt: "<img class='center-fit' src='image/50.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}        
+         
+var repeat51 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/51.wav',
+      prompt: "<img class='center-fit' src='image/51.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+var repeat52 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/52.wav',
+      prompt: "<img class='center-fit' src='image/52.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+var repeat53 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/53.wav',
+      prompt: "<img class='center-fit' src='image/53.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+var repeat54 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/54.wav',
+      prompt: "<img class='center-fit' src='image/54.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+var repeat55 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/55.wav',
+      prompt: "<img class='center-fit' src='image/55.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+} 
+var repeat56 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/56.wav',
+      prompt: "<img class='center-fit' src='image/56.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+var repeat57 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/57.wav',
+      prompt: "<img class='center-fit' src='image/57.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+         
+ var repeat58 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/58.wav',
+      prompt: "<img class='center-fit' src='image/58.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+} 
+ 
+ var repeat59 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/59.wav',
+      prompt: "<img class='center-fit' src='image/59.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+} 
+ 
+ 
+ var repeat60 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/60.wav',
+      prompt: "<img class='center-fit' src='image/60.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+} 
+ 
+ var repeat61 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/61.wav',
+      prompt: "<img class='center-fit' src='image/61.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+ 
+ var repeat62 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/62.wav',
+      prompt: "<img class='center-fit' src='image/62.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+         
+  var repeat63 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/63.wav',
+      prompt: "<img class='center-fit' src='image/63.gif'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}        
+  
+  var repeat64 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/64.wav',
+      prompt: "<img class='center-fit' src='image/64.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+  
+  var repeat65 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/65.wav',
+      prompt: "<img class='center-fit' src='image/65.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  enable: true,
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}  
+  
+    var final = {
+      type: "html-button-response",
+      choices: ['Continue'],
+    stimulus: '',
+      prompt: "This is the end of the experiment! Thank you for your time and effort! <br> <br> When you click <b>Continue</b>, you will be prompted to download a .csv file. It's your data from this experiment! Please <b> accept the download </b>. After that, you will be redirect to a page to <b>upload your data</b>.<br><br> Thanks again!"
+    };
+      
+      
+               
+      timeline.push(welcome);
+      timeline.push(welcome2);
+      timeline.push(repeat1);
+      timeline.push(repeat2);
+      timeline.push(repeat3);
+      timeline.push(repeat4);
+      timeline.push(repeat5);
+      timeline.push(q1);
+      timeline.push(q1_1);
+      timeline.push(repeat6);
+      timeline.push(repeat7);
+      timeline.push(repeat8);
+      timeline.push(repeat9);
+      timeline.push(repeat10);
+      timeline.push(repeat11);
+      timeline.push(repeat12);
+      timeline.push(repeat13);
+      timeline.push(q2);
+      timeline.push(repeat15);
+      timeline.push(repeat16);
+      timeline.push(repeat17);
+      timeline.push(repeat18);
+      timeline.push(q3);
+      timeline.push(repeat19);
+      timeline.push(repeat20);
+      timeline.push(repeat21);
+      timeline.push(repeat22);
+      timeline.push(repeat23);
+       timeline.push(repeat24);
+       timeline.push(q4);
+        timeline.push(q1_1);
+       timeline.push(repeat25);
+     timeline.push(repeat26);
+      timeline.push(repeat27);
+       timeline.push(repeat28);
+      timeline.push(q5);
+      timeline.push(repeat29);
+      timeline.push(repeat30);
+      timeline.push(repeat31);
+      timeline.push(repeat34);
+      timeline.push(q6);
+      timeline.push(repeat35);
+      timeline.push(repeat36);
+      timeline.push(repeat37);
+      timeline.push(repeat38);
+      timeline.push(repeat39);
+      timeline.push(q7);
+      timeline.push(repeat40);
+      timeline.push(repeat41);
+      timeline.push(repeat42);
+      timeline.push(q8);
+      timeline.push(q1_1);
+      timeline.push(repeat43);
+      timeline.push(repeat44);
+      timeline.push(repeat46);
+      timeline.push(q9);
+      timeline.push(repeat47);
+      timeline.push(repeat48);
+      timeline.push(repeat49);
+      timeline.push(repeat53);
+      timeline.push(repeat54);
+      timeline.push(repeat55);
+      timeline.push(q10);
+      timeline.push(repeat56);
+      timeline.push(repeat57);
+      timeline.push(repeat58);
+      timeline.push(repeat59);
+      timeline.push(repeat60);
+      timeline.push(repeat61);
+      timeline.push(repeat62);
+      timeline.push(q11);
+      timeline.push(repeat63);
+      timeline.push(repeat64);
+      timeline.push(repeat65);
+      timeline.push(q12);
+      timeline.push(final);
+      function saveData(name, data){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'savefile.php'); // 'write_data.php' is the path to the php file described above.
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({filename: name, filedata: data}));
+}
+      
+  String.prototype.format = function () {
+    var i = 0, args = arguments;
+    return this.replace(/{}/g, function () {
+        return typeof args[i] != 'undefined' ? args[i++] : '';
+    });
+    };
+      
+      jsPsych.init({
+      timeline: timeline,
+         use_webaudio: false,
+     fullscreen: true,
+      on_finish: function(){ saveData("experiment_data", jsPsych.data.get().csv()); 
+                           jsPsych.data.get().localSave('csv','{}.csv'.format(id));
+     
+      setTimeout(function() {
+          return window.location.replace('https://script.google.com/macros/s/AKfycbxxk8iAXv43_q_dmALU-PvS3MPRz00P6PmGdxyQ2C4O7mTdT_k/exec');
+  
+         }, 1500);
+                           } 
+    });
+  </script>
+</html>
