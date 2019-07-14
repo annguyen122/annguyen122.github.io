@@ -1286,6 +1286,11 @@ var repeat57 = {
   }
 }  
   
+   var survey_trial = {
+  type: 'survey-text',
+  questions: [{prompt: "How old are you?"}, {prompt: "What's your gender?"}],
+};
+  
     var final = {
       type: "html-button-response",
       choices: ['Continue'],
@@ -1369,6 +1374,7 @@ var repeat57 = {
       timeline.push(repeat64);
       timeline.push(repeat65);
       timeline.push(q12);
+      timeline.push(survey_trial);
       timeline.push(final);
       function saveData(name, data){
   var xhr = new XMLHttpRequest();
