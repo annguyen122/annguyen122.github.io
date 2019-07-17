@@ -50,7 +50,7 @@ console.log(number);
          use_webaudio: false,
      fullscreen: true,
       on_finish: function() {
-        var trials = jsPsych.data.get();
+        var trials = jsPsych.data.get().last(1);
           console.log(trials);
     }
     });
