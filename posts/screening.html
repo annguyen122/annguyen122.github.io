@@ -52,7 +52,7 @@ console.log(number);
       on_finish: function() {
         var trials = jsPsych.data.get().last(1);
         jsPsych.data.displayData();
-          console.log(jsPsych.data.get().select('correct').values);
+          console.log((jsPsych.data.get().select('correct').values).toString());
         
     }
     });
