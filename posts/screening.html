@@ -15,6 +15,7 @@
   </body>
   <script>
    var timeline = [];
+      var page_0_options = ["Greek mythology", "Real creatures who are mistaken for the fantastic", "The ocean", "A particular location of the nautical vessel"];
    var page_1_options = ["old Victorian-era bright green house", "bright old Victorian-era green house", "Victorian-era old bright green house", "old bright green Victorian-era house"];
   var page_2_options =  ["go to bed earlier", "go to bed later", "wake up earlier", "wake up later"];
    var page_3_options =  ["through", "on", "in", "inside", "outside", "near"];   
@@ -22,24 +23,26 @@
   
       var multi_choice_block = {
   type: 'survey-multi-choice',
-   preamble: " <audio controls> <source src='sound/screening_6.wav' type='audio/wav'> ",
+   preamble: "Select the best option for the following questions and sentences: <br> <br> <audio controls> <source src='sound/screening_6.wav' type='audio/wav'> ",
   questions: [
-    {prompt: "Miranda has been saving money to buy a house. She wants to purchase a(n) ... ", name: 'adj', options: page_1_options, required:true},       
-    {prompt: "Miranda has been sleeping late. This affects both her work and her health. To address this, she should ", name: 'sleeping', options: page_2_options, required: true},
-    {prompt: "The worker notices that there is a crack ___ the pavement ", name: 'preposition', options: page_3_options, required: true},
-    {prompt: "It is so hot outside! I'm going to ___ ", name: 'phrase', options: page_4_options, required: true},
-    {prompt: " <audio controls> <src='sound/screening_6.wav' type='audio/wav'> ", name: 'audio', options: page_4_options, required: true},
+      {prompt: "1.", name: "audio", options: page_0_options, required: true},
+    {prompt: "2. Miranda has been saving money to buy a house. She wants to purchase a(n) _____ ", name: 'adj', options: page_1_options, required:true},       
+    {prompt: "3. Miranda has been sleeping late. This is not good for her health. To address this, she should ", name: 'sleeping', options: page_2_options, required: true},
+    {prompt: "4. The worker notices that there is a crack _____ the pavement ", name: 'preposition', options: page_3_options, required: true},
+    {prompt: "5. It is so hot outside! I'm going to _____ ", name: 'phrase', options: page_4_options, required: true},
 ],
  on_finish: function(data){
      var number = 0
- var1 = (data.responses.split(",")[0]);
-  var2 =    data.responses.split(",")[1];
-   var3 =  data.responses.split(",")[2]
-  var4 =  data.responses.split(",")[3]
-if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q0oldVictorianerabrightgreenhouse') { number ++; }
- if (var2.match(/[a-zA-Z0-9]/g).join('') == 'Q1wakeupearlier') { number ++;}
-      if (var3.match(/[a-zA-Z0-9]/g).join('') == 'Q2on') { number ++;}
-      if (var4.match(/[a-zA-Z0-9]/g).join('') == 'Q3drawthebath') { number ++;}
+ var0 =    (data.responses.split(",")[0]);
+ var1 = (data.responses.split(",")[1]);
+  var2 =    data.responses.split(",")[2];
+   var3 =  data.responses.split(",")[3]
+  var4 =  data.responses.split(",")[4]
+     if (var0.match(/[a-zA-Z0-9]/g).join('') == 'Q0Realcreatureswhoaremistakenforthefantastic') { number ++; }
+if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q1oldVictorianerabrightgreenhouse') { number ++; }
+ if (var2.match(/[a-zA-Z0-9]/g).join('') == 'Q2wakeupearlier') { number ++;}
+      if (var3.match(/[a-zA-Z0-9]/g).join('') == 'Q3on') { number ++;}
+      if (var4.match(/[a-zA-Z0-9]/g).join('') == 'Q4drawthebath') { number ++;}
 
 
              data.correct = number;
