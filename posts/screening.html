@@ -28,10 +28,16 @@
     {prompt: "It is so hot outside! I'm going to ___ ", name: 'phrase', options: page_4_options, required: true},
 ],
  on_finish: function(data){
- x = (data.responses.split(",")[0]);
+     var number = 0
+ var1 = (data.responses.split(",")[0]);
+  var2 =    data.responses.split(",")[1];
+   var3 =  data.responses.split(",")[2]
+  var4 =  data.responses.split(",")[3]
 console.log(x.match(/[a-zA-Z0-9]/g).join(''));
-console.log(x=='Q0":"bright old Victorian-era green house');
- console.log(x.split(/Q0/)[1]==':"oldVictorianerabrightgreenhouse');}
+console.log(x=='Q0oldVictorianerabrightgreenhouse');
+if (var1 == 'Q0oldVictorianerabrightgreenhouse') { number ++; }
+ if (var2 == 'Q1wakeupearlier') { number ++;}
+console.log(number);
  };
    
   
