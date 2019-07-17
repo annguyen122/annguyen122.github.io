@@ -40,7 +40,7 @@ console.log(data.responses);}
          use_webaudio: false,
      fullscreen: true,
       on_finish: function() {
-         console.log(jsPsych.data.responses);
+         console.log(jsPsych.data.responses[0]);
         jsPsych.data.responses.displayData('csv');
     }
     });
