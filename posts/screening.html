@@ -37,6 +37,7 @@ console.log(var1.match(/[a-zA-Z0-9]/g).join(''));
 if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q0oldVictorianerabrightgreenhouse') { number ++; }
  if (var2.match(/[a-zA-Z0-9]/g).join('') == 'Q1wakeupearlier') { number ++;}
 console.log(number);
+             data.correct = number;
  }
  };
       
@@ -49,7 +50,8 @@ console.log(number);
          use_webaudio: false,
      fullscreen: true,
       on_finish: function() {
-            console.log(number);
+        var trials = jsPsych.data.get();
+          console.log(trials);
     }
     });
   </script>
