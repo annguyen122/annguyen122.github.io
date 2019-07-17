@@ -51,7 +51,6 @@ if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q0oldVictorianerabrightgreenhouse') 
       timeline.push(multi_choice_block);
       jsPsych.init({
       timeline: timeline,
-         use_webaudio: false,
      fullscreen: true,
       on_finish: function() {
         var trials = jsPsych.data.get().last(1);
