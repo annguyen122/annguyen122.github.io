@@ -29,7 +29,7 @@
     {prompt: "It is so hot outside! I'm going to ___ ", name: 'phrase', options: page_4_options, required: true},
 ],
  on_finish: function(data){
-print(data.responses);}
+console.log(data.responses);}
  };
   
 
@@ -40,7 +40,7 @@ print(data.responses);}
          use_webaudio: false,
      fullscreen: true,
       on_finish: function() {
-         print(data.responses);
+         console.log(jsPsych.data.responses);
         jsPsych.data.displayData('csv');
     }
     });
