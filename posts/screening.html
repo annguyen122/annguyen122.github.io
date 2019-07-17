@@ -23,15 +23,14 @@
    var multi_choice_block = {
   type: 'survey-multi-choice',
   questions: [
-    {prompt: "Miranda has been saving money to buy a house. She wants to purchase a(n) ... ", name: 'adj', options: page_1_options, required:true,       on_finish: function(data){
-        data.correct = data.responses == jsPsych.pluginAPI.convertKeyCharacterToKeyCode("old Victorian-era bright green house");}, 
+    {prompt: "Miranda has been saving money to buy a house. She wants to purchase a(n) ... ", name: 'adj', options: page_1_options, required:true},       
     {prompt: "Miranda has been sleeping late. This affects both her work and her health. To address this, she should ", name: 'sleeping', options: page_2_options, required: true},
     {prompt: "The worker notices that there is a crack ___ the pavement ", name: 'preposition', options: page_3_options, required: true},
     {prompt: "It is so hot outside! I'm going to ___ ", name: 'phrase', options: page_4_options, required: true},
 ],
+  on_finish: function(data){
+  print(data.responses); 
 };
-    var correct_trials = trials.filter({correct: true});
-    var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
   
 
 
