@@ -23,7 +23,7 @@
   
       var multi_choice_block = {
   type: 'survey-multi-choice',
-   preamble: "Select the best option for the following questions and sentences: <br> <br> <audio controls> <source src='sound/screening_6.wav' type='audio/wav'> ",
+   preamble: "Select the best option for the following questions and sentences. For question 1, please listen to the audio file: <br> <br> <audio controls> <source src='sound/screening_6.wav' type='audio/wav'> ",
   questions: [
       {prompt: "1.", name: "audio", options: page_0_options, required: true},
     {prompt: "2. Miranda has been saving money to buy a house. She wants to purchase a(n) _____ ", name: 'adj', options: page_1_options, required:true},       
@@ -57,10 +57,8 @@ if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q1oldVictorianerabrightgreenhouse') 
       timeline: timeline,
      fullscreen: true,
       on_finish: function() {
-        var trials = jsPsych.data.get().last(1);
-        jsPsych.data.displayData();
          var accuracy = ((jsPsych.data.get().select('correct').values).toString());
-       setTimeout(function() {if (accuracy==4){return window.location.replace('probing.html');}
+       setTimeout(function() {if (accuracy==5){return window.location.replace('probing.html');}
                               else {return window.location.replace('scn.html');}
            }, 2000);
        }
