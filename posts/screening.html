@@ -19,14 +19,15 @@
   var page_2_options =  ["go to bed earlier", "go to bed later", "wake up earlier", "wake up later"];
    var page_3_options =  ["through", "on", "in", "inside", "outside", "near"];   
    var page_4_options =  ["start the bath", "fill the bath", "get the bath", "draw the bath", "make the bath", "load the bath"];   
-   var multi_choice_block = {
+  
+      var multi_choice_block = {
   type: 'survey-multi-choice',
   questions: [
     {prompt: "Miranda has been saving money to buy a house. She wants to purchase a(n) ... ", name: 'adj', options: page_1_options, required:true},       
     {prompt: "Miranda has been sleeping late. This affects both her work and her health. To address this, she should ", name: 'sleeping', options: page_2_options, required: true},
     {prompt: "The worker notices that there is a crack ___ the pavement ", name: 'preposition', options: page_3_options, required: true},
     {prompt: "It is so hot outside! I'm going to ___ ", name: 'phrase', options: page_4_options, required: true},
-      {prompt: "<audio src='sound/screening_6.wav'>", name='audio', options: page_4_options, required: true},
+    {prompt: " <audio src='sound/screening_6.wav'> ", name: 'audio', options: page_4_options, required: true},
 ],
  on_finish: function(data){
      var number = 0
