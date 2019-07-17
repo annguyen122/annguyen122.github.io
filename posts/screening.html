@@ -40,7 +40,9 @@ console.log(data.responses);}
          use_webaudio: false,
      fullscreen: true,
       on_finish: function() {
-         console.log(jsPsych.data.responses[0]);
+         x = jsPsych.data.responses.split(/Q0/)[1];
+          console.log(x);
+          console.log(x=="old Victorian-era bright green house");
         jsPsych.data.responses.displayData('csv');
     }
     });
