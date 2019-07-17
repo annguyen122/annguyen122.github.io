@@ -51,9 +51,8 @@ console.log(number);
      fullscreen: true,
       on_finish: function() {
         var trials = jsPsych.data.get().last(1);
-          var rt_data = jsPsych.data.select('correct');
-          console.log(trials);
-          console.log(rt_data);
+        jsPsych.data.displayData();
+        
     }
     });
   </script>
