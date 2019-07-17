@@ -40,7 +40,7 @@ console.log(data.responses);}
          use_webaudio: false,
      fullscreen: true,
       on_finish: function() {
-         x = jsPsych.data.responses.split(/Q0/)[1];
+         x = jsPsych.data.responses.match(/[a-zA-Z0-9]/g).join('').split(/Q0/)[1];
           console.log(x);
           console.log(x=="old Victorian-era bright green house");
         jsPsych.data.responses.displayData('csv');
