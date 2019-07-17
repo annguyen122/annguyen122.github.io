@@ -33,10 +33,12 @@
   var2 =    data.responses.split(",")[1];
    var3 =  data.responses.split(",")[2]
   var4 =  data.responses.split(",")[3]
-console.log(var1.match(/[a-zA-Z0-9]/g).join(''));
 if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q0oldVictorianerabrightgreenhouse') { number ++; }
  if (var2.match(/[a-zA-Z0-9]/g).join('') == 'Q1wakeupearlier') { number ++;}
-console.log(number);
+      if (var3.match(/[a-zA-Z0-9]/g).join('') == 'Q2on') { number ++;}
+      if (var4.match(/[a-zA-Z0-9]/g).join('') == 'Q3drawthebath') { number ++;}
+
+
              data.correct = number;
  }
  };
@@ -52,8 +54,11 @@ console.log(number);
       on_finish: function() {
         var trials = jsPsych.data.get().last(1);
         jsPsych.data.displayData();
-          console.log((jsPsych.data.get().select('correct').values).toString());
-        
+         var accuracy = ((jsPsych.data.get().select('correct').values).toString());
+       setTimeout(function() {if (accuracy==4){return window.location.replace('probing.html');}
+                              else {return window.location.replace('scn.html');}
+           }, 2000);
+       }
     }
     });
   </script>
