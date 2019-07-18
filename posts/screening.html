@@ -17,7 +17,7 @@
    var timeline = [];
       var page_0_options = ["Greek mythology", "Real creatures who are mistaken for the fantastic", "The ocean", "A particular location of the nautical vessel"];
    var page_1_options = ["old Victorian-era bright green house", "bright old Victorian-era green house", "Victorian-era old bright green house", "old bright green Victorian-era house"];
-  var page_2_options =  ["go to bed earlier", "go to bed later", "wake up earlier", "wake up later"];
+  var page_2_options =  ["She comes to work late", "She is always too tired to give a good performance", "She keeps missing the deadline", "She has health problems"];
    var page_3_options =  ["through", "on", "in", "inside", "outside", "near"];   
    var page_4_options =  ["start the bath", "fill the bath", "get the bath", "draw the bath", "make the bath", "load the bath"];   
   
@@ -27,7 +27,7 @@
   questions: [
       {prompt: "1.", name: "audio", options: page_0_options, required: true},
     {prompt: "2. Miranda has been saving money to buy a house. She wants to purchase a(n) _____ ", name: 'adj', options: page_1_options, required:true},       
-    {prompt: "3. Miranda has been sleeping late. This is not good for her health. To address this, she should ", name: 'sleeping', options: page_2_options, required: true},
+    {prompt: "3. Miranda has been sleeping late. Her boss has also not been happy with her. It is most likely because ____.  ", name: 'sleeping', options: page_2_options, required: true},
     {prompt: "4. The worker notices that there is a crack _____ the pavement ", name: 'preposition', options: page_3_options, required: true},
     {prompt: "5. It is so hot outside! I'm going to _____ ", name: 'phrase', options: page_4_options, required: true},
 ],
@@ -40,7 +40,7 @@
   var4 =  data.responses.split(",")[4]
      if (var0.match(/[a-zA-Z0-9]/g).join('') == 'Q0Realcreatureswhoaremistakenforthefantastic') { number ++; }
 if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q1oldVictorianerabrightgreenhouse') { number ++; }
- if (var2.match(/[a-zA-Z0-9]/g).join('') == 'Q2wakeupearlier') { number ++;}
+ if (var2.match(/[a-zA-Z0-9]/g).join('') == 'Q2Shecomestoworklate') { number ++;}
       if (var3.match(/[a-zA-Z0-9]/g).join('') == 'Q3on') { number ++;}
       if (var4.match(/[a-zA-Z0-9]/g).join('') == 'Q4drawthebath') { number ++;}
 
@@ -57,11 +57,10 @@ if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q1oldVictorianerabrightgreenhouse') 
       timeline: timeline,
      fullscreen: true,
       on_finish: function() {
-         jsPsych.data.displayData();
          var accuracy = ((jsPsych.data.get().select('correct').values).toString());
-       setTimeout(function() {if (accuracy==5){return window.location.replace('probing.html');}
+       setTimeout(function() {if (accuracy>3){return window.location.replace('probing.html');}
                               else {return window.location.replace('scn.html');}
-           }, 20000);
+           }, 2000);
        }
    
     });
