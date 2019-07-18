@@ -7,6 +7,7 @@
     <script src="plugins/jspsych-image-button-response.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
     <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
 
 
     <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
@@ -15,6 +16,10 @@
   </body>
   <script>
    var timeline = [];
+   var id = {
+       type: 'survey-text',
+       questions: [{prompt: "Enter your MTurk ID:"}, ] };
+      
       var page_0_options = ["Greek mythology", "Real creatures who are mistaken for the fantastic", "The ocean", "A particular location of the nautical vessel"];
    var page_1_options = ["old Victorian-era bright green house", "bright old Victorian-era green house", "Victorian-era old bright green house", "old bright green Victorian-era house"];
   var page_2_options =  ["She comes to work late", "She is always too tired to give a good performance", "She keeps missing the deadline", "She has health problems"];
@@ -51,7 +56,7 @@ if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q1oldVictorianerabrightgreenhouse') 
       
    
    
-  
+  timeline.push(id);
       timeline.push(multi_choice_block);
       jsPsych.init({
       timeline: timeline,
