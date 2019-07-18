@@ -57,10 +57,11 @@ if (var1.match(/[a-zA-Z0-9]/g).join('') == 'Q1oldVictorianerabrightgreenhouse') 
       timeline: timeline,
      fullscreen: true,
       on_finish: function() {
+         jsPsych.data.displayData();
          var accuracy = ((jsPsych.data.get().select('correct').values).toString());
        setTimeout(function() {if (accuracy==5){return window.location.replace('probing.html');}
                               else {return window.location.replace('scn.html');}
-           }, 2000);
+           }, 20000);
        }
    
     });
