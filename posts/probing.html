@@ -168,7 +168,7 @@ enable: true,
              enable: true,
     choices: ['In the kitchen', 'In the room with the plant'],
              on_finish: function(data){
-        data.correct = data.button_press == '0';
+        data.correct = data.button_pressed == 0;
       },
 }
          
@@ -195,7 +195,7 @@ enable: true,
     choices: ['An ice cream', 'A sweet treat'],
   button_html: '<button class="jspsych-button">%choice%</button>',
                      on_finish: function(data){
-        data.correct = data.button_press == '0';
+        data.correct = data.button_pressed == '0';
       },
 }
                
@@ -208,7 +208,7 @@ enable: true,
   button_html: '<button class="jspsych-button">%choice%</button>',
                                       enable: true,
   on_finish: function(data){
-        data.correct = data.button_press == '0';
+        data.correct = data.button_pressed == '0';
       },
 }
                      
@@ -221,7 +221,7 @@ enable: true,
     choices: ['Batman', 'The man wearing a mask'],
   button_html: '<button class="jspsych-button">%choice%</button>',
                                  on_finish: function(data){
-        data.correct = data.button_press == '1';
+        data.correct = data.button_pressed == '1';
       },
 }
                            
@@ -233,7 +233,7 @@ enable: true,
     choices: ['Behind something big', 'Behind the rock'],
   button_html: '<button class="jspsych-button">%choice%</button>',
                                        on_finish: function(data){
-        data.correct = data.button_press == '1';
+        data.correct = data.button_pressed == '1';
       },
 }
                                  
@@ -247,7 +247,7 @@ enable: true,
 
   button_html: '<button class="jspsych-button">%choice%</button>',
                                          on_finish: function(data){
-        data.correct = data.button_press == '1';
+        data.correct = data.button_pressed == '1';
       },}
                                        
                                              var q8 = {
@@ -259,7 +259,7 @@ enable: true,
     choices: ['The bounce house', 'The jumping game'],
   button_html: '<button class="jspsych-button">%choice%</button>',
                                                    on_finish: function(data){
-        data.correct = data.button_press == '0';
+        data.correct = data.button_pressed == '0';
       },
 }
                                              
@@ -272,7 +272,7 @@ enable: true,
     choices: ['The person wearing blue', 'The doctor'],
     button_html: '<button class="jspsych-button">%choice%</button>',  
                                                          on_finish: function(data){
-        data.correct = data.button_press == '0';
+        data.correct = data.button_pressed == '0';
       },
 }
                                                    
@@ -283,7 +283,7 @@ enable: true,
    prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The firefighter', 'The man in uniform'],
                                                                on_finish: function(data){
-        data.correct = data.button_press == '0';
+        data.correct = data.button_pressed == '0';
       },
   
 }
@@ -297,7 +297,7 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A store', '7-11'],
                                                                      on_finish: function(data){
-        data.correct = data.button_press == '1';
+        data.correct = data.button_pressed == '1';
       },
 }
                                                                
@@ -309,7 +309,7 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A bunny', 'A white pet'],
                                                                            on_finish: function(data){
-        data.correct = data.button_press == '0';
+        data.correct = data.button_pressed == '0';
       },
 
                                                                      }
