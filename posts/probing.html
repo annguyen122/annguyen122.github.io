@@ -166,7 +166,10 @@ enable: true,
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
              enable: true,
-    choices: ['In the kitchen', 'In the room with the plant']
+    choices: ['In the kitchen', 'In the room with the plant'],
+             on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
 }
          
              var q1_1 = {
@@ -191,6 +194,9 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['An ice cream', 'A sweet treat'],
   button_html: '<button class="jspsych-button">%choice%</button>',
+                     on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
 }
                
                      var q4 = {
@@ -201,7 +207,9 @@ enable: true,
     choices: ['A cake with fruit', 'A watermelon cake'],
   button_html: '<button class="jspsych-button">%choice%</button>',
                                       enable: true,
-
+  on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
 }
                      
                            var q5 = {
@@ -212,6 +220,9 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Batman', 'The man wearing a mask'],
   button_html: '<button class="jspsych-button">%choice%</button>',
+                                 on_finish: function(data){
+        data.correct = data.button_press == '1';
+      },
 }
                            
                                  var q6 = {
@@ -221,6 +232,9 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Behind something big', 'Behind the rock'],
   button_html: '<button class="jspsych-button">%choice%</button>',
+                                       on_finish: function(data){
+        data.correct = data.button_press == '1';
+      },
 }
                                  
                                        var q7 = {
@@ -231,7 +245,10 @@ enable: true,
     choices: ['With one of her parents', 'With her mom'],
                                                         enable: true,
 
-  button_html: '<button class="jspsych-button">%choice%</button>',}
+  button_html: '<button class="jspsych-button">%choice%</button>',
+                                         on_finish: function(data){
+        data.correct = data.button_press == '1';
+      },}
                                        
                                              var q8 = {
        type: 'audio-button-response',
@@ -241,6 +258,9 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The bounce house', 'The jumping game'],
   button_html: '<button class="jspsych-button">%choice%</button>',
+                                                   on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
 }
                                              
                                                    var q9 = {
@@ -250,7 +270,10 @@ enable: true,
      stimulus: 'sound/q9.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The person wearing blue', 'The doctor'],
-    button_html: '<button class="jspsych-button">%choice%</button>',                                                   
+    button_html: '<button class="jspsych-button">%choice%</button>',  
+                                                         on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
 }
                                                    
                                                          var q10 = {
@@ -259,6 +282,9 @@ enable: true,
      button_html: '<button class="jspsych-button">%choice%</button>',
    prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The firefighter', 'The man in uniform'],
+                                                               on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
   
 }
                                                          
@@ -270,6 +296,9 @@ enable: true,
 
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A store', '7-11'],
+                                                                     on_finish: function(data){
+        data.correct = data.button_press == '1';
+      },
 }
                                                                
                                                                      var q12 = {
@@ -279,6 +308,9 @@ enable: true,
                                        stimulus: 'sound/q12.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A bunny', 'A white pet'],
+                                                                           on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
 
                                                                      }
    var repeat6 = {
@@ -448,6 +480,9 @@ enable: true,
 
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['To the white building', 'To the hospital'],
+                   on_finish: function(data){
+        data.correct = data.button_press == '0';
+      },
 
 }
              
