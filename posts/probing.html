@@ -169,6 +169,7 @@ enable: true,
     choices: ['In the kitchen', 'In the room with the plant'],
              on_finish: function(data){
         data.correct = data.button_pressed == 0;
+                 data.type = "info";
       },
 }
          
@@ -196,6 +197,7 @@ enable: true,
   button_html: '<button class="jspsych-button">%choice%</button>',
                      on_finish: function(data){
         data.correct = data.button_pressed == '0';
+                         data.type = "probing";
       },
 }
                
@@ -209,6 +211,7 @@ enable: true,
                                       enable: true,
   on_finish: function(data){
         data.correct = data.button_pressed == '0';
+      data.type="echo";
       },
 }
                      
@@ -222,6 +225,7 @@ enable: true,
   button_html: '<button class="jspsych-button">%choice%</button>',
                                  on_finish: function(data){
         data.correct = data.button_pressed == '1';
+                                     data.type = "echo";
       },
 }
                            
@@ -234,6 +238,7 @@ enable: true,
   button_html: '<button class="jspsych-button">%choice%</button>',
                                        on_finish: function(data){
         data.correct = data.button_pressed == '1';
+                                           data.type ="info";
       },
 }
                                  
@@ -248,6 +253,7 @@ enable: true,
   button_html: '<button class="jspsych-button">%choice%</button>',
                                          on_finish: function(data){
         data.correct = data.button_pressed == '1';
+                                             data.type = "info";
       },}
                                        
                                              var q8 = {
@@ -260,6 +266,7 @@ enable: true,
   button_html: '<button class="jspsych-button">%choice%</button>',
                                                    on_finish: function(data){
         data.correct = data.button_pressed == '0';
+         data.type="probing";                                              
       },
 }
                                              
@@ -273,7 +280,9 @@ enable: true,
     button_html: '<button class="jspsych-button">%choice%</button>',  
                                                          on_finish: function(data){
         data.correct = data.button_pressed == '0';
+                                                               data.type ="echo";
       },
+                                                     
 }
                                                    
                                                          var q10 = {
@@ -284,6 +293,7 @@ enable: true,
     choices: ['The firefighter', 'The man in uniform'],
                                                                on_finish: function(data){
         data.correct = data.button_pressed == '0';
+                                                                   data.type="probing";
       },
   
 }
@@ -298,6 +308,7 @@ enable: true,
     choices: ['A store', '7-11'],
                                                                      on_finish: function(data){
         data.correct = data.button_pressed == '1';
+                                                                         data.type="probing";
       },
 }
                                                                
@@ -310,6 +321,7 @@ enable: true,
     choices: ['A bunny', 'A white pet'],
                                                                            on_finish: function(data){
         data.correct = data.button_pressed == '0';
+                                                                               data.type="info";
       },
 
                                                                      }
