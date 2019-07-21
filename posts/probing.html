@@ -1514,7 +1514,7 @@ var repeat57 = {
      fullscreen: true,
       on_finish: function(){ 
       var interaction_data = jsPsych.data.getInteractionData();
-          jsPsych.data.addProperties.({interaction: interaction_data});
+          jsPsych.data.addProperties({interaction: interaction_data});
           saveData("experiment_data", jsPsych.data.get().csv()); 
                            jsPsych.data.get().localSave('csv','{}.csv'.format(id));
      
