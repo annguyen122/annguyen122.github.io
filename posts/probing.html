@@ -142,7 +142,7 @@ enable: true,
          var repeat5 = {
   timeline: [{   
        type: 'audio-button-response',
-      enable: true,
+      enable: false,
 
      stimulus: 'sound/5.wav',
       prompt: "<img class='center-fit' src='image/5.jpg'> ",
@@ -165,7 +165,7 @@ enable: true,
   button_html: '<button id="button" class="jspsych-button" disabled >%choice%</button> ',
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-             enable: false,
+      enable: false,
     choices: ['In the kitchen', 'In the room with the plant'],
              on_finish: function(data){
         data.correct = data.button_pressed == 0;
