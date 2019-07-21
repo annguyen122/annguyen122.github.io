@@ -40,7 +40,7 @@
       choices: ['Continue'],
 
       stimulus: '',
-       prompt: "<p> Welcome to the experiment! Today you are going to listen to the adventure of Billy and Julie. <br> <br> At the end of this task, you will be asked to download your data (a small .csv file) and upload it to a platform. Approval of your work depends on the upload of your data. If you are unwilling to download and upload the data file, please return the HIT. <br> <br> To move onto the next screen throughout the story, click Continue.<p>"
+       prompt: "<p> Welcome to the experiment! Today you are going to listen to the adventure of Billy and Julie. <br> <br> At the end of this task, you will be asked to download your data (a small .csv file) and upload it to a platform. Approval of your work depends on the upload of your data. If you are unwilling to download and upload the data file, please return the HIT. Please note that we record the browser's activity to make sure that you stay focused and pay attention to the story. <br> <br> To move onto the next screen throughout the story, click Continue.<p>"
     };
     
    var welcome2 = {
@@ -1491,21 +1491,7 @@ var repeat57 = {
       timeline.push(repeat5);
       timeline.push(q1);
       timeline.push(q1_1);
-      timeline.push(repeat6);
-      timeline.push(repeat7);
-      timeline.push(repeat8);
-      timeline.push(repeat9);
-      timeline.push(repeat10);
-      timeline.push(repeat11);
-      timeline.push(repeat12);
-      timeline.push(repeat13);
-      timeline.push(q2);
-      timeline.push(repeat15);
-      timeline.push(repeat16);
-      timeline.push(repeat17);
-      timeline.push(repeat18);
-      timeline.push(q3);
-      
+     
       timeline.push(final);
       function saveData(name, data){
   var xhr = new XMLHttpRequest();
@@ -1528,7 +1514,7 @@ var repeat57 = {
      fullscreen: true,
       on_finish: function(){ 
       var interaction_data = jsPsych.data.getInteractionData();
-          jsPsych.data.addProperties({interaction: interaction_data.json()});
+          jsPsych.data.addProperties(interaction_data.json());
           saveData("experiment_data", jsPsych.data.get().csv()); 
                            jsPsych.data.get().localSave('csv','{}.csv'.format(id));
      
