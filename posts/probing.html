@@ -54,7 +54,7 @@
     var slide1 = {   
        type: 'audio-button-response',
      stimulus: 'sound/1.wav',
-        enable: false,
+        enable: true,
 
       prompt: "<img class='center-fit' src='image/1.jpg'> ",
     choices: ['Play Again', 'Continue'],
@@ -165,7 +165,7 @@ enable: true,
   button_html: '<button id="button" class="jspsych-button" disabled >%choice%</button> ',
      stimulus: 'sound/q1.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-             enable: true,
+             enable: false,
     choices: ['In the kitchen', 'In the room with the plant'],
              on_finish: function(data){
         data.correct = data.button_pressed == 0;
@@ -190,7 +190,7 @@ enable: true,
                var q3 = {
        type: 'audio-button-response',
      stimulus: 'sound/q3.wav',
-             enable: true,
+             enable: false,
 
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['An ice cream', 'A sweet treat'],
@@ -208,7 +208,7 @@ enable: true,
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A cake with fruit', 'A watermelon cake'],
   button_html: '<button class="jspsych-button">%choice%</button>',
-                                      enable: true,
+             enable: false,
   on_finish: function(data){
         data.correct = data.button_pressed == '0';
       data.type="echo";
@@ -218,7 +218,7 @@ enable: true,
                            var q5 = {
        type: 'audio-button-response',
      stimulus: 'sound/q5.wav',
-             enable: true,
+             enable: false,
 
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Batman', 'The man wearing a mask'],
@@ -231,7 +231,7 @@ enable: true,
                            
                                  var q6 = {
        type: 'audio-button-response',
-                       enable: true,
+             enable: false,
                            stimulus: 'sound/q6.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['Behind something big', 'Behind the rock'],
@@ -248,7 +248,7 @@ enable: true,
      stimulus: 'sound/q7.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['With one of her parents', 'With her mom'],
-                                                        enable: true,
+             enable: false,
 
   button_html: '<button class="jspsych-button">%choice%</button>',
                                          on_finish: function(data){
@@ -259,7 +259,7 @@ enable: true,
                                              var q8 = {
        type: 'audio-button-response',
      stimulus: 'sound/q8.wav',
-                                                              enable: true,
+             enable: false,
 
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The bounce house', 'The jumping game'],
@@ -272,7 +272,7 @@ enable: true,
                                              
                                                    var q9 = {
        type: 'audio-button-response',
-                                                                    enable: true,
+             enable: false,
 
      stimulus: 'sound/q9.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
@@ -288,6 +288,8 @@ enable: true,
                                                          var q10 = {
        type: 'audio-button-response',
      stimulus: 'sound/q10.wav',
+          enable: false,
+
      button_html: '<button class="jspsych-button">%choice%</button>',
    prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['The firefighter', 'The man in uniform'],
@@ -302,7 +304,7 @@ enable: true,
        type: 'audio-button-response',
      button_html: '<button class="jspsych-button">%choice%</button>',                                                           
      stimulus: 'sound/q11.wav',
-                                                                                enable: true,
+             enable: false,
 
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A store', '7-11'],
@@ -315,7 +317,7 @@ enable: true,
                                                                      var q12 = {
        type: 'audio-button-response',
      button_html: '<button class="jspsych-button">%choice%</button>',
-                                               enable: true,
+             enable: false,
                                        stimulus: 'sound/q12.wav',
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['A bunny', 'A white pet'],
@@ -488,7 +490,7 @@ enable: true,
        type: 'audio-button-response',
      stimulus: 'sound/q2.wav',
                    button_html: '<button class="jspsych-button">%choice%</button>',
-             enable: true,
+             enable: false,
 
       prompt: "<img class='center-fit' src='image/alien.jpg'> ",
     choices: ['To the white building', 'To the hospital'],
