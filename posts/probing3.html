@@ -74,71 +74,7 @@
     }
   }
 }
-      
-      var repeat2 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/2.wav',
-      enable: true,
-
-      prompt: "<img class='center-fit' src='image/2.gif'> ",
-    choices: ['Play Again', 'Continue'],
-  
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}
-    
-       var repeat3 = {
-  timeline: [{   
-       type: 'audio-button-response',
-     stimulus: 'sound/3.wav',
-      enable: true,
-
-      prompt: "<img class='center-fit' src='image/3.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}
-       
-        var repeat4 = {
-  timeline: [{   
-       type: 'audio-button-response',
-        button_html: '<button class="jspsych-btn">%choice%</button> ',
-enable: true,
-     stimulus: 'sound/4.wav',
-      prompt: "<img class='center-fit' src='image/4.jpg'> ",
-    choices: ['Play Again', 'Continue'],
-  
-}],
-  
-  loop_function: function(){
-    data = jsPsych.data.getLastTrialData().values()[0]
-
-    if(data.button_pressed == "0"){
-      return true; // loop again!
-    } else {
-      return false; // continue
-    }
-  }
-}
-        
+             
          var repeat5 = {
   timeline: [{   
        type: 'audio-button-response',
@@ -160,30 +96,7 @@ enable: true,
   }
 }
          
-         var q1 = {
-       type: 'audio-button-response',
-  button_html: '<button id="button" class="jspsych-button">%choice%</button> ',
-     stimulus: 'sound/q1.wav',
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-      enable: false,
-    choices: ['In the kitchen', 'In the room with the plant'],
-             on_finish: function(data){
-        data.correct = data.button_pressed == 0;
-                 data.type = "info";
-      },
-}
-         
-             var q1_1 = {
-       type: 'html-button-response',
-                   button_html: '<button class="jspsych-button">%choice%</button>',
-             enable: true,
-
-     stimulus: "Do you think Beeple asked the previous question because of his bad hearing, his bad eyesight, or because he wants to test you?",
-    choices: ['Bad hearing', 'Bad eyesight', 'Test you'],
-  
-}
-             
-              
+                 
                
                
    
@@ -1485,10 +1398,7 @@ var repeat57 = {
       timeline.push(welcome);
       timeline.push(welcome2);
       timeline.push(repeat1);
-      timeline.push(repeat2);
-      timeline.push(repeat3);
-      timeline.push(repeat4);
-      timeline.push(repeat5);
+    
       timeline.push(q1);
       timeline.push(q1_1);
      timeline.push(repeat6);
@@ -1520,17 +1430,7 @@ timeline.push(repeat19);
       timeline.push(repeat27);
        timeline.push(repeat28);
       timeline.push(q5);
-      timeline.push(repeat29);
-      timeline.push(repeat30);
-      timeline.push(repeat31);
-      timeline.push(repeat34);
-      timeline.push(q6);
-      timeline.push(repeat35);
-      timeline.push(repeat36);
-      timeline.push(repeat37);
-      timeline.push(repeat38);
-      timeline.push(repeat39);
-      timeline.push(q7);
+    
       timeline.push(repeat40);
       timeline.push(repeat41);
       timeline.push(repeat42);
@@ -1555,10 +1455,7 @@ timeline.push(repeat19);
       timeline.push(repeat61);
       timeline.push(repeat62);
       timeline.push(q11);
-      timeline.push(repeat63);
-      timeline.push(repeat64);
-      timeline.push(repeat65);
-      timeline.push(q12);
+      
     timeline.push(survey_trial); 
  
 
