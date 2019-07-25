@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Experiment</title>
+    <script src="jspsych.js"></script>
+    <script src="plugins/jspsych-html-button-response.js"></script>
+    <script src="plugins/jspsych-image-button-response.js"></script>
+    <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+
+
+    <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>  
+  </body>
+  <script>
+   var timeline = [];
+    var q2 = {
+       type: 'survey-text',
+             preamble: "<img class='center-fit' src='image/alien.jpg' width='300' height='300'>",
+        questions: [{prompt: 'hi',required: true}],}
+             timeline.push(q2);
+              jsPsych.init({
+      timeline: timeline,
+    
+                           
+    });
+  </script>
+</html>
