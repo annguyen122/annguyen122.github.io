@@ -7,7 +7,7 @@
     <script src="plugins/jspsych-image-button-response.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
     <script src="plugins/jspsych-survey-multi-choice.js"></script>
-    <script src="plugins/jspsych-survey-text.js"></script>
+    <script src="plugins/jspsych-survey-text-req.js"></script>
 
 
     <link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
@@ -17,9 +17,11 @@
   <script>
    var timeline = [];
     var q2 = {
-       type: 'survey-text',
-             preamble: "<img class='center-fit' src='image/alien.jpg' width='300' height='300'>",
-        questions: [{prompt: 'hi',required: true}],}
+       type: 'survey-text-req',
+        preamble: "<img class='center-fit' src='image/alien.jpg' width='300' height='300'>",
+        questions: "<audio src ='sound/q2.wav' autoplay>'",
+        required: true,
+    }
              timeline.push(q2);
               jsPsych.init({
       timeline: timeline,
