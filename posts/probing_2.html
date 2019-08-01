@@ -46,7 +46,7 @@ var welcome = {
       choices: ['Continue'],
     stimulus: '',
 
-      prompt: "Today you are going to listen to the adventure of Billy and Julie. This is Beeple. He will be listening to the story along with you. He will interrupts the story to ask questions. Your task is to guess why he asks the question. <br> Sometimes it's because <b>he doesn't hear what has just been said, and wants you to repeat it </b>. <br>Sometimes, it's because <b>he wants to test you about some details to see if you get the story</b>!<br> Try to guess what Beeple wants to know based on the way he asks a question. If all of your answers are correct, you will receive a <b> $1 bonus </b> <br><br> Remember, there are two types of questions in this task, and in order to get the bonus, you cannot keep sticking to one type of answer. This is also served as a control to see if you read the instruction.  <br>  <br><br> <img class='center-fit' src='image/alien.jpg'> "
+      prompt: "Today you are going to listen to the adventure of Billy and Julie. This is Beeple. He will be listening to the story along with you. He will interrupt the story to ask questions. Your task is to guess why he asks the question. <br> Sometimes it's because <b>he doesn't hear what has just been said, and wants you to repeat it </b>. <br>Sometimes, it's because <b>he wants to test you about some details to see if you get the story</b>!<br> Try to guess what Beeple wants to know based on the way he asks a question. If all of your answers are correct, you will receive a <b> $1 bonus </b> <br><br> Remember, there are two types of questions in this task, and in order to get the bonus, you cannot keep sticking to one type of answer. This is also served as a control to see if you read the instruction.  <br>  <br><br> <img class='center-fit' src='image/alien.jpg'> "
     };
       
     var slide1 = {   
@@ -92,14 +92,16 @@ var welcome = {
 }
       
           var q1_1 = {
-       type: 'html-button-response',
-                   button_html: '<button class="jspsych-button">%choice%</button>',
-             enable: true,
-     stimulus: "<b>Based on the way Beeple asks the question</b>, what kind of answer do you think Beeple wants?",
-    choices: ['A repetition of what the kid just said, because Beeple did not hear it', 'A detail on the screen, because Beeple wants to see if the audience gets the story  '],
+       type: 'survey-text',
+     question: ]{prompt:"<b>Based on the way Beeple asks the question</b>, what is the answer to Beeple's question? (Hint: recall the Beeple only asks two types of questions. He either wants a repetition of what has been said ('a white building') or a detail on the screen ('the hospital').", required: true}]
   
 }
-    
+   
+  var q1_2 = {
+       type: 'survey-text',
+     question: ]{prompt:"<b>Based on the way Beeple asks the question</b>, what is the answer to Beeple's question?", required: true}]
+  
+}
     
        var repeat3 = {
   timeline: [{   
@@ -1480,7 +1482,7 @@ var repeat57 = {
       timeline.push(repeat17);
       timeline.push(repeat18);
       timeline.push(q3);
-                  timeline.push(q1_1);
+                  timeline.push(q1_2);
 
 timeline.push(repeat19);
       timeline.push(repeat20);
@@ -1489,26 +1491,26 @@ timeline.push(repeat19);
       timeline.push(repeat23);
        timeline.push(repeat24);
        timeline.push(q4);
-            timeline.push(q1_1);
+            timeline.push(q1_2);
 
        timeline.push(repeat25);
      timeline.push(repeat26);
       timeline.push(repeat27);
        timeline.push(repeat28);
       timeline.push(q5);
-          timeline.push(q1_1);
+          timeline.push(q1_2);
 
       timeline.push(repeat40);
       timeline.push(repeat41);
       timeline.push(repeat42);
       timeline.push(q8);
-            timeline.push(q1_1);
+            timeline.push(q1_2);
 
       timeline.push(repeat43);
       timeline.push(repeat44);
       timeline.push(repeat46);
       timeline.push(q9);
-            timeline.push(q1_1);
+            timeline.push(q1_2);
 
       timeline.push(repeat47);
       timeline.push(repeat48);
@@ -1517,7 +1519,7 @@ timeline.push(repeat19);
       timeline.push(repeat54);
       timeline.push(repeat55);
       timeline.push(q10);
-    timeline.push(q1_1);
+    timeline.push(q1_2);
       timeline.push(repeat56);
       timeline.push(repeat57);
       timeline.push(repeat58);
@@ -1525,7 +1527,7 @@ timeline.push(repeat19);
       timeline.push(repeat61);
       timeline.push(repeat62);
       timeline.push(q11);
-                 timeline.push(q1_1);
+                 timeline.push(q1_2);
  
     timeline.push(survey_trial); 
  
