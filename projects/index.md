@@ -8,6 +8,7 @@ comments: false
 
 
 # Conference Presentations/Posters
+Schneider J. M., Weng Y., Kozloff V., **Nguyen A.**, & Qi Z. (2019). Neural sensitivity to speech distribution information underlise statistical learning. Poster presented at *Neurobiology of Language*, Helsinki, Finland.
 
 Qi Z., **Nguyen A.**, Ozernov-Palchik O., Beach S., May S., Arciuli J., & Gabrieli J.D.E. (2018). Statistical learning in reading development and reading impairment. Poster presented at *Boston University Conference on Language Development*, Boston, MA.
 
