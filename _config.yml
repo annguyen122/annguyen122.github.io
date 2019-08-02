@@ -5,7 +5,7 @@ words_per_minute:   200
 background:         'assets/img/101.jpg'
 tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://annguyen122.github.io/
+url:               
 
 # Jekyll
 permalink:          /:title/
