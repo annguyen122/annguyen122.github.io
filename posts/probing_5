@@ -45,9 +45,80 @@
       type: "html-button-response",
       choices: ['Continue'],
     stimulus: '',
-      prompt: "This is Beeple. He will be listening to the story along with you. However, he occasionally has to interrupt the story to ask questions.<br> Sometimes it's because <b>he doesn't hear what the narrator says </b> (his hearing is bad!).<br> Sometimes it's because <b>he misses some details on the screen</b>. <br>And sometimes, it's because <b>he wants to test you to see if you get the story</b>!<br> Please help Beeple answer his questions! The answers will vary depending on the purpose of the question. If all of your answers are correct, you will receive a <b> $1 bonus </b>. <br> Make sure your volume is on before clicking Continue! <br><br> <img class='center-fit' src='image/alien.jpg'> "
+      prompt: "In today's experiment, you will be an alien called Beeple. src='image/i0.jpg'> "
+    };
+    
+       var welcome3 = {
+      type: "html-button-response",
+      choices: ['Continue'],
+    stimulus: '',
+      prompt: "Beeple goes to a special school for aliens. It is story time today. It seems like a new alien friend has just arrived on Earth. src='image/i.jpg'> "
     };
       
+             var welcome4 = {
+      type: 'audio-button-response',
+
+     stimulus: 'sound/i1.wav',
+      choices: ['Continue'],
+      prompt: "src='image/i2.jpg'> "
+          };
+          
+            var welcome5 = {
+       type: 'html-button-response',
+      choices: ['My name is Beeple'],
+    stimulus: '',
+      prompt: "src='image/i3.jpg'> "
+          };
+          
+            var welcome6 = {
+       type: 'audio-button-response',
+            stimulus: 'sound/i3.wav',
+
+      choices: ['Continue'],
+      prompt: "src='image/i4.jpg'> "
+          };
+          
+              var welcome7 = {
+       type: 'audio-button-response',
+            stimulus: 'sound/i2.wav',
+
+      choices: ['Continue'],
+      prompt: "src='image/i2.jpg'> "
+          };
+          
+              var welcome8 = {
+       type: 'audio-button-response',
+            stimulus: 'sound/i4.wav',
+
+      choices: ['Continue'],
+      prompt: "src='image/i4.jpg'> "
+          };
+          
+            var welcome9 = {
+       type: 'audio-button-response',
+            stimulus: 'sound/i5.wav',
+
+      choices: ['Continue'],
+      prompt: "src='image/i2.jpg'> "
+          };
+          
+            var welcome10 = {
+       type: 'audio-button-response',
+            stimulus: 'sound/i6.wav',
+
+      choices: ['Continue'],
+      prompt: "src='image/i4.jpg'> "
+          };
+          
+              var welcome11 = {
+       type: 'audio-button-response',
+            stimulus: 'sound/i7.wav',
+
+      choices: ['Yes, I will help you'],
+      prompt: "src='image/i6.jpg'> "
+          };
+          
+          
     var slide1 = {   
        type: 'audio-button-response',
      stimulus: 'sound/1.wav',
@@ -69,6 +140,67 @@
     }
   }
 }
+ var repeat2 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/2.wav',
+      enable: true,
+      prompt: "<img class='center-fit' src='image/2.gif'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+    
+       var repeat3 = {
+  timeline: [{   
+       type: 'audio-button-response',
+     stimulus: 'sound/3.wav',
+      enable: true,
+      prompt: "<img class='center-fit' src='image/3.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+       
+        var repeat4 = {
+  timeline: [{   
+       type: 'audio-button-response',
+        button_html: '<button class="jspsych-btn">%choice%</button> ',
+enable: true,
+     stimulus: 'sound/4.wav',
+      prompt: "<img class='center-fit' src='image/4.jpg'> ",
+    choices: ['Play Again', 'Continue'],
+  
+}],
+  
+  loop_function: function(){
+    data = jsPsych.data.getLastTrialData().values()[0]
+    if(data.button_pressed == "0"){
+      return true; // loop again!
+    } else {
+      return false; // continue
+    }
+  }
+}
+        
              
          var repeat5 = {
   timeline: [{   
@@ -89,142 +221,88 @@
     }
   }
 }
+
+     var q1 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq1.wav',
+     questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'> <b>Based on the way Terry asks the question</b>, how should Beeple answer Terry? (Hint: Terry only asks two types of questions. He either wants a repetition of what has been said ('a white building') because he doesn't hear or a detail on the screen ('the hospital') because he doesn't see, and he asks them differently.", required: true}]
+}
+         
          
                  
-               
-               
+                           
    
-               var q3 = {
-       type: 'audio-button-response',
-     stimulus: 'sound/q3.wav',
-             enable: false,
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['An ice cream', 'A sweet treat'],
-  button_html: '<button class="jspsych-button">%choice%</button>',
-                     on_finish: function(data){
-        data.correct = data.button_pressed == '0';
-                         data.type = "probing";
-      },
+             var q3 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq3.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
                
-                     var q4 = {
-       type: 'audio-button-response',
-     stimulus: 'sound/q4.wav',
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['A cake with fruit', 'A watermelon cake'],
-  button_html: '<button class="jspsych-button">%choice%</button>',
-             enable: false,
-  on_finish: function(data){
-        data.correct = data.button_pressed == '0';
-      data.type="echo";
-      },
+                        var q4 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq4.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
                      
-                           var q5 = {
-       type: 'audio-button-response',
-     stimulus: 'sound/q5.wav',
-             enable: false,
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['Batman', 'The man wearing a mask'],
-  button_html: '<button class="jspsych-button">%choice%</button>',
-                                 on_finish: function(data){
-        data.correct = data.button_pressed == '1';
-                                     data.type = "echo";
-      },
+                                 var q5 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq5.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
-                           
-                                 var q6 = {
-       type: 'audio-button-response',
-             enable: false,
-                           stimulus: 'sound/q6.wav',
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['Behind something big', 'Behind the rock'],
-  button_html: '<button class="jspsych-button">%choice%</button>',
-                                       on_finish: function(data){
-        data.correct = data.button_pressed == '1';
-                                           data.type ="info";
-      },
+
+         var q6 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq6.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
-                                 
-                                       var q7 = {
-                                           
-       type: 'audio-button-response',
-     stimulus: 'sound/q7.wav',
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['With one of her parents', 'With her mom'],
-             enable: false,
-  button_html: '<button class="jspsych-button">%choice%</button>',
-                                         on_finish: function(data){
-        data.correct = data.button_pressed == '1';
-                                             data.type = "info";
-      },}
-                                       
-                                             var q8 = {
-       type: 'audio-button-response',
-     stimulus: 'sound/q8.wav',
-             enable: false,
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['The bounce house', 'The jumping game'],
-  button_html: '<button class="jspsych-button">%choice%</button>',
-                                                   on_finish: function(data){
-        data.correct = data.button_pressed == '0';
-         data.type="probing";                                              
-      },
+        
+                 var q7 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq7.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
-                                             
-                                                   var q9 = {
-       type: 'audio-button-response',
-             enable: false,
-     stimulus: 'sound/q9.wav',
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['The person wearing blue', 'The doctor'],
-    button_html: '<button class="jspsych-button">%choice%</button>',  
-                                                         on_finish: function(data){
-        data.correct = data.button_pressed == '0';
-                                                               data.type ="echo";
-      },
-                                                     
+         var q8 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq8.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
-                                                   
-                                                         var q10 = {
-       type: 'audio-button-response',
-     stimulus: 'sound/q10.wav',
-          enable: false,
-     button_html: '<button class="jspsych-button">%choice%</button>',
-   prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['The firefighter', 'The man in uniform'],
-                                                               on_finish: function(data){
-        data.correct = data.button_pressed == '0';
-                                                                   data.type="probing";
-      },
-  
+
+         var q9 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq9.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
-                                                         
-                                                               var q11 = {
-       type: 'audio-button-response',
-     button_html: '<button class="jspsych-button">%choice%</button>',                                                           
-     stimulus: 'sound/q11.wav',
-             enable: false,
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['A store', '7-11'],
-                                                                     on_finish: function(data){
-        data.correct = data.button_pressed == '1';
-                                                                         data.type="probing";
-      },
+
+         var q10 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq10.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
 }
-                                                               
-                                                                     var q12 = {
-       type: 'audio-button-response',
-     button_html: '<button class="jspsych-button">%choice%</button>',
-             enable: false,
-                                       stimulus: 'sound/q12.wav',
-      prompt: "<img class='center-fit' src='image/alien.jpg'> ",
-    choices: ['A bunny', 'A white pet'],
-                                                                           on_finish: function(data){
-        data.correct = data.button_pressed == '0';
-                                                                               data.type="info";
-      },
-                                                                     }
+
+         var q11 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq11.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
+}
+                          
+                          
+                          
+                                   var q12 = {
+       type: 'survey-text',
+     stimulus: 'sound/iq12.wav',
+      prompt: "<img class='center-fit' src='image/i6.jpg'> ",
+         questions: [{prompt:"<img class='center-fit' src='image/i6.jpg'>", required: true}]
+}
+                          
    var repeat6 = {
   timeline: [{   
        type: 'audio-button-response',
@@ -1315,10 +1393,24 @@ var repeat57 = {
                
       timeline.push(welcome);
       timeline.push(welcome2);
+            timeline.push(welcome3);
+      timeline.push(welcome4);
+      timeline.push(welcome5);
+      timeline.push(welcome6);
+      timeline.push(welcome7);
+      timeline.push(welcome8);
+      timeline.push(welcome9);
+      timeline.push(welcome10);
+      timeline.push(welcome11);
+      timeline.push(welcome12);
+
       timeline.push(repeat1);
-    
+          timeline.push(repeat2);
+      timeline.push(repeat3);
+      timeline.push(repeat4);
+      timeline.push(repeat5);
+
       timeline.push(q1);
-      timeline.push(q1_1);
      timeline.push(repeat6);
       timeline.push(repeat7);
       timeline.push(repeat8);
@@ -1347,7 +1439,17 @@ timeline.push(repeat19);
       timeline.push(repeat27);
        timeline.push(repeat28);
       timeline.push(q5);
-    
+          timeline.push(repeat29);
+      timeline.push(repeat30);
+      timeline.push(repeat31);
+      timeline.push(repeat34);
+      timeline.push(q6);
+      timeline.push(repeat35);
+      timeline.push(repeat36);
+      timeline.push(repeat37);
+      timeline.push(repeat38);
+      timeline.push(repeat39);
+      timeline.push(q7);
       timeline.push(repeat40);
       timeline.push(repeat41);
       timeline.push(repeat42);
@@ -1371,7 +1473,10 @@ timeline.push(repeat19);
       timeline.push(repeat61);
       timeline.push(repeat62);
       timeline.push(q11);
-      
+      timeline.push(repeat63);
+      timeline.push(repeat64);
+      timeline.push(repeat65);
+      timeline.push(q12);
     timeline.push(survey_trial); 
  
       timeline.push(final);
